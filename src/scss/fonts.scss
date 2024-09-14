@@ -5,7 +5,49 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Garamond';
+    src: url('../fonts/EBGaramond.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lora';
+    src: url('../fonts/Lora.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 .font-jung {
     font-family: 'Jung', sans-serif;
     font-weight: 400;
+}
+
+.name-title {
+    font-family: 'Garamond', sans-serif;
+    font-weight: 600;
+    font-size: 70px;
+    text-transform: capitalize;
+    color: var(--secondary);
+}
+
+.name-initial {
+    font-family: 'lora';
+    font-size: 400px;
+    text-transform: uppercase;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.name-description {
+    font-family: 'lora', sans-serif;
+    font-size: 22px;
+    color: var(--content);
+}
+
+.content {
+    font-family: 'Garamond', sans-serif;
+    font-weight: normal;
+    color: var(--content);
 }
