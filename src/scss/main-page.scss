@@ -1,0 +1,58 @@
+
+.font-jung {
+    font-family: 'Jung', sans-serif;
+    font-weight: 400;
+}
+
+.name-title {
+    font-family: 'noto', sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    text-transform: capitalize;
+    color: var(--secondary);
+}
+
+.name-initial {
+    font-family: 'noto', sans-serif;
+    font-size: 340px;
+    text-transform: uppercase;
+    color: var(--primary);
+    z-index: -10px;
+}
+
+.name-description {
+    font-family: 'lora', sans-serif;
+    font-size: 22px;
+    color: var(--content);
+    z-index: 10px;
+}
+
+.qoutes {
+    font-family: 'Garamond', sans-serif;
+    font-weight: normal;
+    color: var(--content);
+    z-index: 10px;
+    font-style: italic;
+}
+
+.content {
+    font-family: 'Garamond', sans-serif;
+    font-weight: normal;
+    color: var(--content);
+    z-index: 10px;
+    font-size: 18px;
+}
+
+.nav-button {
+    font-family: 'Garamond', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: var(--foreground);
+}
+
+.header-content {
+    background-image: url('/images/Initial.png');
+    background-size: 190px;
+    background-repeat: no-repeat;
+}
