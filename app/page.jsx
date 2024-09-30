@@ -1,5 +1,6 @@
 import Navigator from "./components/navigator";
 import './globals.scss'
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -14,23 +15,29 @@ export default function Home() {
               <small className="name-description font-normal text-lg">The Simeon W Johnson family heritage</small>
             </div>
 
-            <div className="flex gap-y-4 flex-col h-full p-2 z-20 ">
-              <p className="tracking-widest text-md leading-loose indent-8 content text-justify ">
-                  Simeon Johnson is a devoted father and a distinguished writer whose life and work are deeply intertwined with his commitment to faith and family. As a father,
-                  he embodies the values of patience, guidance, and unconditional love, striving to be a steadfast source of support and inspiration for his children.
-                  His approach to parenting reflects the same thoughtful and compassionate spirit that characterizes his writing.
+            <div className="flex gap-y-4 flex-col h-full p-2 z-20">
+              <p className="tracking-widest text-md leading-loose indent-8 content text-justify">
+                Simeon Johnson is a devoted father and a distinguished writer whose life and work are deeply intertwined with his commitment to faith and family. As a father,
+                he embodies the values of patience, guidance, and unconditional love, striving to be a steadfast source of support and inspiration for his children.
+                His approach to parenting reflects the same thoughtful and compassionate spirit that characterizes his writing.
               </p>
               <p className="tracking-widest text-md leading-loose indent-8 content text-justify">
-                  In his role as an author, Johnson's work is a testament to his profound understanding of faith and human experience. His writings, which are central to his book
-                  ministry, offer a rich blend of personal insight and spiritual wisdom, designed to uplift and guide readers on their own journeys.
-                  Through his books, he communicates complex spiritual truths with clarity and warmth, making them accessible and impactful for a diverse audience.
-                  Johnson's website highlights his dual passion for nurturing his family and sharing his spiritual insights with the world. His dedication to both roles
-                  reveals a deep commitment to living out his beliefs and values, making his contributions both personally meaningful and universally relevant.
+                In his role as an author, Johnson&#39;s work is a testament to his profound understanding of faith and human experience. His writings, which are central to his book
+                ministry, offer a rich blend of personal insight and spiritual wisdom, designed to uplift and guide readers on their own journeys.
+                Through his books, he communicates complex spiritual truths with clarity and warmth, making them accessible and impactful for a diverse audience.
+                Johnson&#39;s website highlights his dual passion for nurturing his family and sharing his spiritual insights with the world. His dedication to both roles
+                reveals a deep commitment to living out his beliefs and values, making his contributions both personally meaningful and universally relevant.
               </p>
             </div>
           </div>
           <div className="laptop:w-full desktop:w-1/2 tablet:w-full flex justify-center items-baseline px-5">
-            <img src="/images/section_1.jpg" alt="" className="desktop:w-auto laptop:w-1/2 tablet:w-1/2 h-full" />
+            <Image
+              src="/images/section_1.jpg"
+              alt=""
+              width={500} // Add an appropriate width value
+              height={300} // Add an appropriate height value
+              className="desktop:w-auto laptop:w-1/2 tablet:w-1/2 h-full"
+            />
           </div>
         </div>
 
@@ -41,12 +48,17 @@ export default function Home() {
         </div>
 
         <div className="flex w-full mt-10">
-          <img src="/images/image_3.jpg" alt="" className="h-[80%] w-full" />
+            <Image
+              src="/images/image_3.jpg"
+              alt=""
+              width={500}
+              height={400}
+              className="h-[80%] w-full"
+            />
         </div>
-
         <div className="flex flex-col w-full px-14 mb-5 mt-10">
           <p className="qoutes text-[58px] text-left">
-            "He that openeth and no man and shutteth; and  shutteth, and no man openeth"
+            &quot;He that openeth and no man and shutteth; and shutteth, and no man openeth&quot;
             <span className="text-[40px]"> - Revelation 3: 7-8</span>
           </p>
         </div>

@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Socialite from "./socialite";
+import Image from "next/image";
 
 export const navigator = () => {
     return (
@@ -20,9 +21,7 @@ export const navigator = () => {
                 </div>
             </div>
             <div class="w-1/2 flex justify-center">
-                {/* <p className="branding">Simeon</p> */}
-                <img src="/images/Logo.jpg" alt="" width="100"/>
-                {/* <small className="brand-context w-full border-y border-white py-1">The Johnson Family Heritage</small> */}
+                <Image src="/images/Logo.jpg" alt="" width={100} height={100} />
             </div>
             <div class="flex flex-col w-full py-4 items-center justify-center h-full">
                 <div className="flex w-full items-center justify-evenly pt-5">
