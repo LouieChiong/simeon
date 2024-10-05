@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="bg-white w-full flex flex-col items-center justify-center min-h-screen h-auto relative">
       <Navigator />
-      <section className="flex desktop:flex-col laptop:flex-col tablet:flex-col w-fullh-full mt-44 px-12">
+      <section className="flex desktop:flex-col laptop:flex-col tablet:flex-col w-fullh-full mt-44 desktop:px-40 laptop:px-30 tablet:px-10">
         <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col-reverse w-full h-full gap-x-5">
           <div className="laptop:w-full desktop:w-1/2 tablet:w-full h-full flex flex-col ">
             <div className="w-full tablet:mt-10 laptop:mt-0 h-[300px] flex flex-col justify-center tablet:items-center laptop:items-start indent-9 header-content tablet:bg-top laptop:bg-left-top">
@@ -34,9 +34,9 @@ export default function Home() {
             <Image
               src="/images/section_1.jpg"
               alt=""
-              width={500} // Add an appropriate width value
-              height={300} // Add an appropriate height value
-              className="desktop:w-auto laptop:w-1/2 tablet:w-1/2 h-full"
+              width={600} // Add an appropriate width value
+              height={750} // Add an appropriate height value
+              className=""
             />
           </div>
         </div>
@@ -56,11 +56,11 @@ export default function Home() {
               className="h-[80%] w-full"
             />
         </div>
-        <div className="flex flex-col w-full px-14 mb-5 mt-10">
-          <p className="qoutes text-[58px] text-left">
+        <div className="flex flex-col w-full px-14 mb-16 mt-10">
+          <span className="qoutes laptop:text-[58px] tablet:text-[48px] text-left">
             &quot;He that openeth and no man and shutteth; and shutteth, and no man openeth&quot;
-            <span className="text-[40px]"> - Revelation 3: 7-8</span>
-          </p>
+            <span className="qoutes laptop:text-[40px] tablet:text-[35px]"> - Revelation 3: 7-8</span>
+            </span>
         </div>
       </section>
     </div>
