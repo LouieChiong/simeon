@@ -3,7 +3,7 @@ import Navigator from "../components/navigator";
 import '../globals.scss'
 import Image from "next/image";
 
-export const BooksPage = () => {
+export default function BooksPage() {
     return (
         <div className="bg-white w-full flex flex-col items-center justify-center min-h-screen h-auto">
         <Navigator />
@@ -77,5 +77,3 @@ export const BooksPage = () => {
         </div>
     )
 }
-
-export default BooksPage;
