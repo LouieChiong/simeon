@@ -56,11 +56,11 @@ export default function Home() {
               className="h-[80%] w-full"
             />
         </div>
-        <div className="flex flex-col w-full px-14 mb-5 mt-10">
-          <p className="qoutes text-[58px] text-left">
+        <div className="flex flex-col w-full px-14 mb-16 mt-10">
+          <span className="qoutes laptop:text-[58px] tablet:text-[48px] text-left">
             &quot;He that openeth and no man and shutteth; and shutteth, and no man openeth&quot;
-            <span className="text-[40px]"> - Revelation 3: 7-8</span>
-          </p>
+            <span className="qoutes laptop:text-[40px] tablet:text-[35px]"> - Revelation 3: 7-8</span>
+            </span>
         </div>
       </section>
     </div>
