@@ -18,13 +18,15 @@ export const navigator = () => {
                     <div className="">
                         <Socialite />
                     </div>
-                    <Link href="/" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Our story</Link>
+                    <Link href="/author" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Our story</Link>
                     <Link href="/books" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[120px] nav-button" >As an author</Link>
                     <Link href="#" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Travels</Link>
                 </div>
             </div>
             <div className="w-1/2 flex justify-center">
-                <Image src="/images/Logo.jpg" alt="" width={100} height={100} />
+                <Link href="/">
+                    <Image src="/images/Logo.jpg" alt="" width={100} height={100} />
+                </Link>
             </div>
             <div className="flex flex-col w-full py-4 items-center justify-center h-full mt-4">
                 <div className="flex w-full items-center justify-evenly pt-5">
