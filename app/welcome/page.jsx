@@ -41,7 +41,7 @@ export default function Welcome() {
                         <p className=" font-semibold text-2xl uppercase">TRAVEL</p>
                         <small className="p-10 text-center">
                         Explore the world and immerse yourself in new cultures, breathtaking landscapes, and unforgettable adventures.
-                        Whether you're seeking relaxation or excitement, travel opens the door to endless possibilities and memories that last a lifetime.
+                        Whether you&apos;re seeking relaxation or excitement, travel opens the door to endless possibilities and memories that last a lifetime.
                         </small>
                     </div>
                 </Link>
