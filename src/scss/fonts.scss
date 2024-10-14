@@ -40,3 +40,12 @@
     font-weight: 400;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'playfair';
+    src: url('../fonts/playfair.ttf') format('truetype');
+}
+
+.font-lora {
+    font-family: 'lora', sans-serif;
+}

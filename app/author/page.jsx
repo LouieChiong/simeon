@@ -1,18 +1,19 @@
 import Navigator from "../components/navigator";
 import '../globals.scss'
 import Image from "next/image";
+import Footer from '../components/footer';
 
 export default function AuthorPages() {
     return (
         <div className="bg-white w-full flex flex-col items-center justify-center min-h-screen h-auto relative">
             <Navigator />
-            <section className="flex desktop:flex-col laptop:flex-col tablet:flex-col w-fullh-full mt-44 desktop:px-40 laptop:px-30 tablet:px-10">
-                <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col-reverse w-full h-full gap-x-5">
-                    <div className="laptop:w-full desktop:w-1/2 tablet:w-full h-full flex flex-col ">
-                        <div className="w-full tablet:mt-10 laptop:mt-0 h-[300px] flex flex-col justify-center tablet:items-center laptop:items-start indent-9 header-content tablet:bg-top laptop:bg-left-top">
-                        <h1 className="name-title">Simeon W. Johnson</h1>
-                        <span className="name-description font-bold text-xl">The Patriarch</span>
-                        <small className="name-description font-normal text-lg">The Simeon W Johnson family heritage</small>
+            <section className="flex desktop:flex-col tablet:flex-col laptop:flex-col mobile:flex-col w-fullh-full mt-44 desktop:px-40 laptop:px-30 tablet:px-10 mobile:px-5">
+                <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col-reverse mobile:flex-col-reverse w-full h-full gap-x-5">
+                    <div className="laptop:w-full desktop:w-1/2 tablet:w-full mobile:w-full h-full flex flex-col ">
+                        <div className="w-full mobile:mt-10 tablet:mt-10 laptop:mt-0 h-[300px] flex flex-col justify-center mobile:items-center tablet:items-center laptop:items-start indent-9 header-content mobile:bg-top tablet:bg-top laptop:bg-left-top">
+                            <h1 className="name-title tablet:text-[50px] mobile:text-[30px] laptop:text-[50px] desktop:text-[50px]">Simeon W. Johnson</h1>
+                            <span className="name-description font-bold text-xl">The Patriarch</span>
+                            <small className="name-description font-normal text-lg">The Simeon W Johnson family heritage</small>
                         </div>
 
                         <div className="flex gap-y-4 flex-col h-full p-2 z-20">
@@ -45,7 +46,7 @@ export default function AuthorPages() {
                     </div>
                 </div>
 
-                <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col w-full h-full gap-x-5 laptop:mt-6 tablet:mt-12">
+                <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col mobile:flex-col w-full h-full gap-x-5 laptop:mt-6 tablet:mt-12 mobile:mt-12">
                     <div className="laptop:w-full desktop:w-1/2 tablet:w-full flex justify-center items-baseline px-5">
                         <Image
                             src="/images/image_4.jpg"
@@ -93,14 +94,14 @@ export default function AuthorPages() {
                     </iframe>
                 </div>
 
-                <div className="flex flex-col w-full px-14 mb-16 mt-10">
-                    <span className="qoutes laptop:text-[58px] tablet:text-[48px] text-left">
+                <div className="flex flex-col w-full tablet:px-14 mobile:px-1 mb-16 mt-10">
+                    <span className="qoutes laptop:text-[58px] tablet:text-[48px] mobile:text-[40px] text-left">
                         &quot;He that openeth and no man and shutteth; and shutteth, and no man openeth&quot;
-                        <span className="qoutes laptop:text-[40px] tablet:text-[35px]"> - Revelation 3: 7-8</span>
-                        </span>
+                        <span className="qoutes laptop:text-[40px] tablet:text-[35px] mobile:text-[30px]"> - Revelation 3: 7-8</span>
+                    </span>
                 </div>
 
-                <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col w-full h-full gap-x-5 laptop:mt-6 tablet:mt-12">
+                <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col mobile:flex-col w-full h-full gap-x-5 laptop:mt-6 tablet:mt-12 mobile:mt-12">
                     <div className="laptop:w-full desktop:w-1/2 tablet:w-full flex justify-center items-baseline">
                         <Image
                             src="/images/family.jpg"
@@ -153,6 +154,7 @@ export default function AuthorPages() {
                     </p>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 }

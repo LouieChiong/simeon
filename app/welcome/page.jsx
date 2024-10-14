@@ -35,7 +35,7 @@ export default function Welcome() {
 
             <div className="flex flex-col items-center justify-center cursor-pointer">
                 <div className="flex flex-col items-center justify-center w-full h-1/2  hover:brightness-50 relative group">
-                <Link href="/" className="w-full h-full">
+                <Link href="/author" className="w-full h-full">
                     <Image src="/images/menu/travel.jpg" height={500} width={900} alt="" className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-50" />
                     <div className="absolute inset-0 flex flex-col items-center justify-center w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
                         <p className=" font-semibold text-2xl uppercase">TRAVEL</p>
@@ -47,7 +47,7 @@ export default function Welcome() {
                 </Link>
                 </div>
                 <div className="flex flex-col items-center justify-center w-full h-1/2  hover:brightness-50 relative group">
-                <Link href="/" className="w-full h-full">
+                <Link href="/author" className="w-full h-full">
                     <Image src="/images/menu/lifestyle.jpg" height={500} width={900} alt="" className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-50" />
                     <div className="absolute inset-0 flex flex-col items-center justify-center w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
                         <p className=" font-semibold text-2xl uppercase">Lifestyle</p>
@@ -61,7 +61,7 @@ export default function Welcome() {
 
             <div className="flex flex-col items-center justify-center cursor-pointer">
                 <div className="flex flex-col items-center justify-center w-full h-1/2  hover:brightness-50 relative group">
-                <Link href="/" className="w-full h-full">
+                <Link href="/author" className="w-full h-full">
                     <Image src="/images/menu/auction.jpg" height={500} width={900} alt="" className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-50" />
                     <div className="absolute inset-0 flex flex-col items-center justify-center w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
                         <p className=" font-semibold text-2xl uppercase">AUCTIONS</p>
@@ -73,7 +73,7 @@ export default function Welcome() {
                 </Link>
                 </div>
                 <div className="flex flex-col items-center justify-center w-full h-1/2  hover:brightness-50 relative group">
-                <Link href="/" className="w-full h-full">
+                <Link href="/author" className="w-full h-full">
                     <Image src="/images/menu/city.jpg" height={500} width={900} alt="" className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-50" />
                     <div className="absolute inset-0 flex flex-col items-center justify-center w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
                         <p className=" font-semibold text-2xl uppercase">Contents</p>

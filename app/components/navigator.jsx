@@ -4,12 +4,12 @@ import Socialite from "./socialite";
 import Image from "next/image";
 import HamburgerButton from "./hamburgerButton";
 
-export const navigator = () => {
+export const Navigator = () => {
 
 
     return (
     <nav className="bg-white h-[105px] flex-col w-full absolute top-0 z-10 ">
-        <div className="columns-3 flex w-full  border-b-2 border-gray-400 tablet:hidden laptop:flex">
+        <div className="columns-3 flex w-full  border-b-2 border-gray-400 mobile:hidden tablet:hidden laptop:flex">
             <div className="flex flex-col w-full py-4">
                 <div className="pb-1">
                     <span className="text-[12px] uppercase hover:font-bold text-gray-500 tracking-wider laptop:ms-6 desktop:ms-16">Celebrating 75 Years of spiritual englighment</span>
@@ -20,7 +20,7 @@ export const navigator = () => {
                     </div>
                     <Link href="/author" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Our story</Link>
                     <Link href="/books" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[120px] nav-button" >As an author</Link>
-                    <Link href="#" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Travels</Link>
+                    <Link href="/travels" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Travels</Link>
                 </div>
             </div>
             <div className="w-1/2 flex justify-center">
@@ -30,14 +30,14 @@ export const navigator = () => {
             </div>
             <div className="flex flex-col w-full py-4 items-center justify-center h-full mt-4">
                 <div className="flex w-full items-center justify-evenly pt-5">
-                    <Link href="#" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >LifeStyle</Link>
-                    <Link href="#" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Auctions</Link>
+                    <Link href="/family" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Family</Link>
+                    <Link href="/auctions" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Auctions</Link>
                     <Link href="#" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Contents</Link>
                 </div>
             </div>
         </div>
 
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 tablet:flex laptop:hidden border-b-2 border-gray-200">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 mobile:flex tablet:flex laptop:hidden border-b-2 border-gray-200">
             <div>
                 <HamburgerButton />
             </div>
@@ -49,19 +49,19 @@ export const navigator = () => {
             <div className="hidden w-full md:block md:w-auto border-t-2" id="drop-down-navbar">
                 <ul className="flex flex-col font-medium mt-4 px-3 bg-white gap-y-4">
                     <li className="hover:bg-gray-100">
-                        <a href="/" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm" aria-current="page">Our story</a>
+                        <a href="/author" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm" aria-current="page">Our story</a>
                     </li>
                     <li className="hover:bg-gray-100">
                         <a href="/books" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm">As an author</a>
                     </li>
                     <li className="hover:bg-gray-100">
-                        <a href="#" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm">Travels</a>
+                        <a href="/travels" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm">Travels</a>
                     </li>
                     <li className="hover:bg-gray-100">
-                        <a href="#" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm">LifeStyle</a>
+                        <a href="/family" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm">Family</a>
                     </li>
                     <li className="hover:bg-gray-100">
-                        <a href="#" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm">Auctions</a>
+                        <a href="/auctions" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm">Auctions</a>
                     </li>
                     <li className="hover:bg-gray-100 mb-3">
                         <a href="#" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm">Contents</a>
@@ -73,4 +73,4 @@ export const navigator = () => {
     )
 }
 
-export default navigator
+export default Navigator

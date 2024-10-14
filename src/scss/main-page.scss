@@ -7,7 +7,6 @@
 .name-title {
     font-family: 'noto', sans-serif;
     font-weight: 600;
-    font-size: 50px;
     text-transform: capitalize;
     color: var(--secondary);
 }
@@ -59,7 +58,19 @@
 
 .welcome-text {
     font-family: 'noto';
-    text-transform: capitalize;
     letter-spacing: 1px;
-    font-size: 55px;
+    font-size: 20px;
+}
+
+.section-title {
+    font-family: 'playfair';
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.main-page {
+    background-image: url('/images/image_3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
