@@ -9,6 +9,14 @@ export default function BooksPage() {
         <div className="bg-white w-full flex flex-col items-center justify-center min-h-screen h-auto">
         <Navigator />
             <section className="flex flex-col w-full h-full mt-44 desktop:px-40 laptop:px-10 tablet:px-10 mobile:px-0">
+                <div className='mb-3 w-full h-auto flex mobile:flex-col tablet:flex-row laptop:flex-row desktop:flex-row mobile:gap-x-0  tablet:gap-x-5 laptop:gap-x-4 desktop:gap-x-0'>
+                    <div className='gap-y-6 flex flex-col items-center mobile:justify-center tablet:justify-start laptop:justify-start px-4 mobile:py-4 tablet:py-10 laptop:py-10 w-full'>
+                        <h3 className='book-title font-bold mobile:!text-[30px] tablet:!text-[50px] laptop:!text-[50px]'>&quot;My Mission and Vision &quot;</h3>
+                        <p className='qoutes indent-10 text-[25px] font-bold'>
+                            To promulgate the Good News Story around the World, changing lives in preparation for the Kingdom of God. Amen!
+                        </p>
+                    </div>
+                </div>
                 <div className='w-full h-auto flex mobile:flex-col tablet:flex-row laptop:flex-row desktop:flex-row mobile:gap-x-0  tablet:gap-x-5 laptop:gap-x-4 desktop:gap-x-0'>
                     <div className='flex mobile:items-center tablet:items-center laptop:items-start desktop:items-start justify-center mobile:w-full tablet:w-1/2 laptop:w-1/2'>
                         <Image src="/images/book-one-1.png" alt="" width={500} height={500}
@@ -16,7 +24,7 @@ export default function BooksPage() {
                         />
                     </div>
                     <div className='gap-y-6 flex flex-col items-center mobile:justify-center tablet:justify-start laptop:justify-start px-4 mobile:py-4 tablet:py-10 laptop:py-10  mobile:w-full tablet:w-1/2 laptop:w-1/2'>
-                        <h3 className='book-title font-bold'> &quot; You&apos;re a Worthwhile Person in More Ways Than a Million &quot;</h3>
+                        <h3 className='book-title font-bold text-center'> &quot; You&apos;re a Worthwhile Person in More Ways Than a Million &quot;</h3>
                         <p className='book-description indent-10'>
                             Is a motivational and self-help book designed to inspire individuals to recognize their self-worth and unique potential.
                             The book focuses on building self-esteem, promoting positive thinking, and encouraging readers to overcome obstacles in their lives.
@@ -32,7 +40,7 @@ export default function BooksPage() {
                             />
                     </div>
                     <div className='gap-y-6 flex flex-col items-center mobile:justify-center tablet:justify-start laptop:justify-start px-4 mobile:py-4 tablet:py-10 laptop:py-10  mobile:w-full tablet:w-1/2 laptop:w-1/2'>
-                        <h3 className='book-title font-bold'>&quot; A myopic life resonated from the brink of the abyss &quot;</h3>
+                        <h3 className='book-title font-bold text-center'>&quot; A myopic life resonated from the brink of the abyss &quot;</h3>
                         <p className='book-description indent-10'>
                             Is an autobiographical and reflective work that delves into the author&apos;s personal experiences and challenges.
                             The book explores themes of hardship, perseverance, and resilience, detailing Johnson’s journey through difficult
@@ -49,7 +57,7 @@ export default function BooksPage() {
                         />
                     </div>
                     <div className='gap-y-6 flex flex-col items-center mobile:justify-center tablet:justify-start laptop:justify-start px-4 mobile:py-4 tablet:py-10 laptop:py-10  mobile:w-full tablet:w-1/2 laptop:w-1/2'>
-                        <h3 className='book-title font-bold'>&quot; Romw versus Ramb reveals God, Adam and Creation &quot;</h3>
+                        <h3 className='book-title font-bold text-center'>&quot; Romw versus Ramb reveals God, Adam and Creation &quot;</h3>
                         <p className='book-description indent-10'>
                             Is a philosophical and theological exploration that examines the origins of humanity, the nature of God,
                             and the creation of the world. The book contrasts different viewpoints—possibly symbolized by `&quot;Rome`&quot; and `&quot;Ramb`&quot;—to delve into religious,
@@ -65,7 +73,7 @@ export default function BooksPage() {
                         />
                     </div>
                     <div className='gap-y-6 flex flex-col items-center mobile:justify-center tablet:justify-start laptop:justify-start px-4 mobile:py-4 tablet:py-10 laptop:py-10  mobile:w-full tablet:w-1/2 laptop:w-1/2'>
-                        <h3 className='book-title font-bold'>&quot; Romw versus Ramb reveals God, Adam and Creation &quot;</h3>
+                        <h3 className='book-title font-bold text-center'>&quot; Romw versus Ramb reveals God, Adam and Creation &quot;</h3>
                         <p className='book-description indent-10'>
                             Is a heartfelt acknowledgment of the extraordinary efforts and sacrifices made by healthcare workers during times of crisis,
                             particularly in the context of the COVID-19 pandemic. The book serves as both a tribute and a reflection on the emotional and
@@ -74,8 +82,8 @@ export default function BooksPage() {
                         </p>
                     </div>
                 </div>
-            </section>
 
+            </section>
             <Footer />
         </div>
     )

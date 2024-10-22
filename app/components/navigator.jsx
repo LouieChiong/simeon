@@ -32,7 +32,7 @@ export const Navigator = () => {
                 <div className="flex w-full items-center justify-evenly pt-5">
                     <Link href="/family" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Family</Link>
                     <Link href="/auctions" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Auctions</Link>
-                    <Link href="#" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Contents</Link>
+                    <Link href="/author" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Contents</Link>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@ export const Navigator = () => {
                         <a href="/auctions" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm">Auctions</a>
                     </li>
                     <li className="hover:bg-gray-100 mb-3">
-                        <a href="#" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm">Contents</a>
+                        <a href="/author" className="block py-2 px-3 text-gray-900 hover:font-bold hover:bg-gray-100 menu-sm">Contents</a>
                     </li>
                 </ul>
             </div>
