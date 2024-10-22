@@ -154,7 +154,7 @@ export default function AuthorPages() {
                     </p>
                 </div>
                 <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-center mt-3 h-auto mb-12">
-                    <h3 className='book-title font-bold mobile:!text-[30px] tablet:!text-[50px] laptop:!text-[50px]'>&quot;My Mission and Vision &quot;</h3>
+                    <h3 className='book-title font-bold mobile:!text-[30px] tablet:!text-[50px] laptop:!text-[50px]'>&quot;My Mission and Vision&quot;</h3>
                     <p className='qoutes indent-10 text-[25px] font-bold'>
                         To promulgate the Good News Story around the World, changing lives in preparation for the Kingdom of God. Amen!
                     </p>
