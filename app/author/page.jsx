@@ -153,16 +153,10 @@ export default function AuthorPages() {
                         to come.
                     </p>
                 </div>
-
-                <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-center mt-5 h-auto mb-12">
-                    <h3 className='book-title font-bold laptop:!text-[50px] desktop:!text-[50px]'>&quot;The significance of words &quot;</h3>
+                <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-center mt-3 h-auto mb-12">
+                    <h3 className='book-title font-bold mobile:!text-[30px] tablet:!text-[50px] laptop:!text-[50px]'>&quot;My Mission and Vision &quot;</h3>
                     <p className='qoutes indent-10 text-[25px] font-bold'>
-                        In my books, you will find a cornucopia of significance and insightful inspirations through the written words!
-                        Words are the tools of thought by which both men and women do most of their thinking and communicate through language.
-                        It clarifies your speech and writing: enhances your conversation with style: It Broadens horizons and increases overall knowledge.
-                        An exact and essential vocabulary is a necessary concomitant to success! It culls the mind with distention to choose the Word that precisely expresses
-                        the thought, the knowledge, and the ability to use them that affirmed these books & Websites:
-                        SWJBookMinistry.us Spiritual and natural perspicacity is changing lives everywhere. To God be the Glory!
+                        To promulgate the Good News Story around the World, changing lives in preparation for the Kingdom of God. Amen!
                     </p>
                 </div>
             </section>
