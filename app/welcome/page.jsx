@@ -35,7 +35,7 @@ export default function Welcome() {
 
             <div className="flex flex-col items-center justify-center cursor-pointer">
                 <div className="flex flex-col items-center justify-center w-full h-1/2  hover:brightness-50 relative group">
-                <Link href="/author" className="w-full h-full">
+                <Link href="/travels" className="w-full h-full">
                     <Image src="/images/menu/travel.jpg" height={500} width={900} alt="" className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-50" />
                     <div className="absolute inset-0 flex flex-col items-center justify-center w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
                         <p className=" font-semibold text-2xl uppercase">TRAVEL</p>
@@ -47,12 +47,12 @@ export default function Welcome() {
                 </Link>
                 </div>
                 <div className="flex flex-col items-center justify-center w-full h-1/2  hover:brightness-50 relative group">
-                <Link href="/author" className="w-full h-full">
+                <Link href="/family" className="w-full h-full">
                     <Image src="/images/menu/lifestyle.jpg" height={500} width={900} alt="" className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-50" />
                     <div className="absolute inset-0 flex flex-col items-center justify-center w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
-                        <p className=" font-semibold text-2xl uppercase">Lifestyle</p>
+                        <p className=" font-semibold text-2xl uppercase">FAMILY</p>
                         <small className="p-10 text-center">
-                        Learn about the writer behind the stories. From early inspirations to the journey of crafting my first book, my path as an author has been one of passion, perseverance, and creativity. Discover the experiences and life moments that have shaped my work and continue to fuel my storytelling
+                            Family is the heart of my journey—shaping my values, inspiring my stories, and grounding me through every chapter of life. Discover how the bonds of love, tradition, and connection have influenced my work and continue to guide my path.
                         </small>
                     </div>
                 </Link>
@@ -61,8 +61,8 @@ export default function Welcome() {
 
             <div className="flex flex-col items-center justify-center cursor-pointer">
                 <div className="flex flex-col items-center justify-center w-full h-1/2  hover:brightness-50 relative group">
-                <Link href="/author" className="w-full h-full">
-                    <Image src="/images/menu/auction.jpg" height={500} width={900} alt="" className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-50" />
+                <Link href="/auctions" className="w-full h-full">
+                    <Image src="/images/menu/auction_2.jpg" height={500} width={900} alt="" className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-50" />
                     <div className="absolute inset-0 flex flex-col items-center justify-center w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
                         <p className=" font-semibold text-2xl uppercase">AUCTIONS</p>
                         <small className="p-10 text-center">
@@ -74,7 +74,7 @@ export default function Welcome() {
                 </div>
                 <div className="flex flex-col items-center justify-center w-full h-1/2  hover:brightness-50 relative group">
                 <Link href="/author" className="w-full h-full">
-                    <Image src="/images/menu/city.jpg" height={500} width={900} alt="" className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-50" />
+                    <Image src="/images/menu/content.jpg" height={500} width={900} alt="" className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-50" />
                     <div className="absolute inset-0 flex flex-col items-center justify-center w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
                         <p className=" font-semibold text-2xl uppercase">Contents</p>
                         <small className="p-10 text-center">
