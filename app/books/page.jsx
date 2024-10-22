@@ -11,10 +11,15 @@ export default function BooksPage() {
             <section className="flex flex-col w-full h-full mt-44 desktop:px-40 laptop:px-10 tablet:px-10 mobile:px-0">
                 <div className='mb-3 w-full h-auto flex mobile:flex-col tablet:flex-row laptop:flex-row desktop:flex-row mobile:gap-x-0  tablet:gap-x-5 laptop:gap-x-4 desktop:gap-x-0'>
                     <div className='gap-y-6 flex flex-col items-center mobile:justify-center tablet:justify-start laptop:justify-start px-4 mobile:py-4 tablet:py-10 laptop:py-10 w-full'>
-                        <h3 className='book-title font-bold mobile:!text-[30px] tablet:!text-[50px] laptop:!text-[50px]'>&quot;My Mission and Vision &quot;</h3>
-                        <p className='qoutes indent-10 text-[25px] font-bold'>
-                            To promulgate the Good News Story around the World, changing lives in preparation for the Kingdom of God. Amen!
-                        </p>
+                    <h3 className='book-title font-bold laptop:!text-[50px] desktop:!text-[50px]'>&quot;The significance of words&quot;</h3>
+                    <p className='qoutes indent-10 text-[25px] font-bold'>
+                        In my books, you will find a cornucopia of significance and insightful inspirations through the written words!
+                        Words are the tools of thought by which both men and women do most of their thinking and communicate through language.
+                        It clarifies your speech and writing: enhances your conversation with style: It Broadens horizons and increases overall knowledge.
+                        An exact and essential vocabulary is a necessary concomitant to success! It culls the mind with distention to choose the Word that precisely expresses
+                        the thought, the knowledge, and the ability to use them that affirmed these books & Websites:
+                        SWJBookMinistry.us Spiritual and natural perspicacity is changing lives everywhere. To God be the Glory!
+                    </p>
                     </div>
                 </div>
                 <div className='w-full h-auto flex mobile:flex-col tablet:flex-row laptop:flex-row desktop:flex-row mobile:gap-x-0  tablet:gap-x-5 laptop:gap-x-4 desktop:gap-x-0'>
@@ -66,7 +71,7 @@ export default function BooksPage() {
                         </p>
                     </div>
                 </div>
-                <div className='w-full h-auto flex mobile:flex-col tablet:flex-row laptop:flex-row desktop:flex-row mobile:gap-x-0  tablet:gap-x-5 laptop:gap-x-4 desktop:gap-x-0'>
+                <div className='mb-10 w-full h-auto flex mobile:flex-col tablet:flex-row laptop:flex-row desktop:flex-row mobile:gap-x-0  tablet:gap-x-5 laptop:gap-x-4 desktop:gap-x-0'>
                     <div className='flex mobile:items-center tablet:items-center laptop:items-start desktop:items-start justify-center mobile:w-full tablet:w-1/2 laptop:w-1/2'>
                         <Image src="/images/book-four-1.png" alt="" width={500} height={500}
                             className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-1/2'
@@ -82,7 +87,6 @@ export default function BooksPage() {
                         </p>
                     </div>
                 </div>
-
             </section>
             <Footer />
         </div>
