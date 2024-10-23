@@ -42,7 +42,7 @@ export default function Family() {
                             }}
                         />
                         <Image src="/images/auction_3.jpg" alt="" width={1000} height={1000}
-                            className='transition ease-in-out delay-150 hover:-translate-y-1 cursor-pointer hover:scale-110 duration-300 w-1/2'
+                            className='transition ease-in-out delay-150 hover:-translate-y-1 cursor-pointer hover:scale-110 duration-300 w-[25%]'
                             onClick={() => {
                                 openModal();
                                 setUrl('/images/auction_3.jpg');
