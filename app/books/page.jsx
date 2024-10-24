@@ -78,7 +78,7 @@ export default function BooksPage() {
                         />
                     </div>
                     <div className='gap-y-6 flex flex-col items-center mobile:justify-center tablet:justify-start laptop:justify-start px-4 mobile:py-4 tablet:py-10 laptop:py-10  mobile:w-full tablet:w-1/2 laptop:w-1/2'>
-                        <h3 className='book-title font-bold text-center'>&quot; Romw versus Ramb reveals God, Adam and Creation &quot;</h3>
+                        <h3 className='book-title font-bold text-center'>&quot; Unforgettable tribute to healthcare professionals, dealing with grief, and global pandemic &quot;</h3>
                         <p className='book-description indent-10'>
                             Is a heartfelt acknowledgment of the extraordinary efforts and sacrifices made by healthcare workers during times of crisis,
                             particularly in the context of the COVID-19 pandemic. The book serves as both a tribute and a reflection on the emotional and
