@@ -27,53 +27,53 @@ export default function Family() {
                         <span className='text-gray-800 text-[50px] font-bold font-lora'> Auction Pieces </span>
                     </div>
                     <div className='flex flex-col gap-8 mobile:items-center tablet:items-center laptop:items-center desktop:items-center justify-center w-full'>
-                        <Image src="/images/auction_1.jpg" alt="" width={1000} height={1000}
+                        <Image src="/images/auctions/auction_1.jpg" alt="" width={1000} height={1000}
                             className='transition ease-in-out delay-150 hover:-translate-y-1 cursor-pointer hover:scale-105 duration-300 w-1/2'
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/auction_1.jpg');
+                                setUrl('/images/auctions/auction_1.jpg');
                             }}
                         />
-                        <Image src="/images/auction_2.jpg" alt="" width={1000} height={1000}
+                        <Image src="/images/auctions/auction_2.jpg" alt="" width={1000} height={1000}
                             className='transition ease-in-out delay-150 hover:-translate-y-1 cursor-pointer hover:scale-110 duration-300 w-1/2'
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/auction_2.jpg');
+                                setUrl('/images/auctions/auction_2.jpg');
                             }}
                         />
-                        <Image src="/images/auction_3.jpg" alt="" width={1000} height={1000}
+                        <Image src="/images/auctions/auction_3.jpg" alt="" width={1000} height={1000}
                             className='transition ease-in-out delay-150 hover:-translate-y-1 cursor-pointer hover:scale-110 duration-300 w-[25%]'
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/auction_3.jpg');
+                                setUrl('/images/auctions/auction_3.jpg');
                             }}
                         />
-                        <Image src="/images/auction_4.jpg" alt="" width={1000} height={1000}
+                        <Image src="/images/auctions/auction_4.jpg" alt="" width={1000} height={1000}
                             className='transition ease-in-out delay-150 hover:-translate-y-1 cursor-pointer hover:scale-110 duration-300 w-1/2'
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/auction_4.jpg');
+                                setUrl('/images/auctions/auction_4.jpg');
                             }}
                         />
-                        <Image src="/images/auction_5.jpg" alt="" width={1000} height={1000}
+                        <Image src="/images/auctions/auction_5.jpg" alt="" width={1000} height={1000}
                             className='transition ease-in-out delay-150 hover:-translate-y-1 cursor-pointer hover:scale-110 duration-300 w-1/2'
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/auction_5.jpg');
+                                setUrl('/images/auctions/auction_5.jpg');
                             }}
                         />
-                        <Image src="/images/auction_8.jpg" alt="" width={1000} height={1000}
+                        <Image src="/images/auctions/auction_8.jpg" alt="" width={1000} height={1000}
                             className='transition ease-in-out delay-150 hover:-translate-y-1 cursor-pointer hover:scale-110 duration-300 w-1/2'
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/auction_8.jpg');
+                                setUrl('/images/auctions/auction_8.jpg');
                             }}
                         />
-                        <Image src="/images/auction_9.jpg" alt="" width={1000} height={1000}
+                        <Image src="/images/auctions/auction_9.jpg" alt="" width={1000} height={1000}
                             className='transition ease-in-out delay-150 hover:-translate-y-1 cursor-pointer hover:scale-110 duration-300 w-1/2'
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/auction_9.jpg');
+                                setUrl('/images/auctions/auction_9.jpg');
                             }}
                         />
                     </div>

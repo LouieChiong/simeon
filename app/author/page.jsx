@@ -104,7 +104,7 @@ export default function AuthorPages() {
                 <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col mobile:flex-col w-full h-full gap-x-5 laptop:mt-6 tablet:mt-12 mobile:mt-12">
                     <div className="laptop:w-full desktop:w-1/2 tablet:w-full flex justify-center items-baseline">
                         <Image
-                            src="/images/family.jpg"
+                            src="/images/family/image13.jpg"
                             alt=""
                             width={600}
                             height={750}
@@ -153,11 +153,24 @@ export default function AuthorPages() {
                         to come.
                     </p>
                 </div>
+
                 <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-center mt-3 h-auto mb-12">
-                    <h3 className='book-title font-bold mobile:!text-[30px] tablet:!text-[50px] laptop:!text-[50px]'>&quot;My Mission and Vision&quot;</h3>
-                    <p className='qoutes indent-10 text-[25px] font-bold'>
-                        To promulgate the Good News Story around the World, changing lives in preparation for the Kingdom of God. Amen!
-                    </p>
+                    <div className="flex mobile:flex-col tablet:flex-col laptop:flex-row justify-center items-center w-full tmt-3 h-auto ">
+                        <Image
+                            src="/images/image_1.jpg"
+                            alt=""
+                            width={600}
+                            height={750}
+                            className="rounded-lg mobile:w-[50%] tablet:w-[25%] mobile:mb-5 tablet:mb-0"
+                            />
+                        <div>
+                            <h3 className='book-title font-bold mobile:!text-[30px] tablet:!text-[50px] laptop:!text-[50px]'>&quot;My Mission and Vision&quot;</h3>
+                            <p className='qoutes indent-10 text-[25px] font-bold'>
+                                To promulgate the Good News Story around the World, changing lives in preparation for the Kingdom of God. Amen!
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </section>
             <Footer />
