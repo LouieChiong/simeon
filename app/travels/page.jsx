@@ -26,9 +26,9 @@ export default function BooksPage() {
                     <div className=' flex mobile:items-center tablet:items-center laptop:items-start desktop:items-start justify-center mobile:w-full tablet:w-1/2 laptop:w-1/2'>
                         <Image  onClick={() => {
                             openModal();
-                            setUrl('/images/travel.jpg');
+                            setUrl('/images/travels/travel.jpg');
                             }}
-                            src="/images/travel.jpg" alt="" width={1000} height={1000}
+                            src="/images/travels/travel.jpg" alt="" width={1000} height={1000}
                             className='mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-[80%] cursor-pointer'
                         />
                     </div>
@@ -36,47 +36,38 @@ export default function BooksPage() {
                         <Image
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/image_7.jpg');
+                                setUrl('/images/travels/travel_1.jpg');
                             }}
-                            src="/images/image_7.jpg" alt="" width={1000} height={1000}
+                            src="/images/travels/travel_1.jpg" alt="" width={1000} height={1000}
                             className='mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-[80%] cursor-pointer'
                         />
                         <Image
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/image_8.jpg');
+                                setUrl('/images/travels/travel_2.jpg');
                             }}
-                            src="/images/image_8.jpg" alt="" width={1000} height={1000}
+                            src="/images/travels/travel_2.jpg" alt="" width={1000} height={1000}
                             className='mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-[80%] cursor-pointer'
                         />
                     </div>
                 </div>
 
-                <div className='mt-5 w-full gap-5 h-full flex mobile:flex-col tablet:flex-row laptop:flex-row desktop:flex-row mobile:gap-x-0  tablet:gap-x-5 laptop:gap-x-4 desktop:gap-x-0'>
+                <div className='mt-5 w-full gap-2 h-full flex mobile:flex-col tablet:flex-row laptop:flex-row desktop:flex-row mobile:gap-x-0  tablet:gap-x-5 laptop:gap-x-4 desktop:gap-x-0'>
                     <div className=' flex mobile:items-center tablet:items-center laptop:items-start desktop:items-start justify-center mobile:w-full tablet:w-1/2 laptop:w-1/2'>
                         <Image  onClick={() => {
                             openModal();
-                            setUrl('/images/new/travel_3.jpg');
+                            setUrl('/images/travels/travel_3.jpg');
                             }}
-                            src="/images/new/travel_3.jpg" alt="" width={1000} height={1000}
+                            src="/images/travels/travel_3.jpg" alt="" width={1000} height={1000}
                             className='mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-[80%] cursor-pointer'
                         />
                     </div>
-                    <div className='flex gap-5 flex-col mobile:items-center tablet:items-center laptop:items-start desktop:items-start justify-center mobile:w-full tablet:w-1/2 laptop:w-1/2'>
-                        <Image
-                            onClick={() => {
-                                openModal();
-                                setUrl('/images/new/travel_1.jpg');
+                    <div className='flex mobile:items-center tablet:items-center laptop:items-start desktop:items-start justify-start mobile:w-full tablet:w-1/2 laptop:w-1/2'>
+                        <Image  onClick={() => {
+                            openModal();
+                            setUrl('/images/travels/travel_12.jpg');
                             }}
-                            src="/images/new/travel_1.jpg" alt="" width={1000} height={1000}
-                            className='mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-[80%] cursor-pointer'
-                        />
-                        <Image
-                            onClick={() => {
-                                openModal();
-                                setUrl('/images/new/travel_2.jpg');
-                            }}
-                            src="/images/new/travel_2.jpg" alt="" width={1000} height={1000}
+                            src="/images/travels/travel_12.jpg" alt="" width={1000} height={1000}
                             className='mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-[80%] cursor-pointer'
                         />
                     </div>
@@ -86,17 +77,17 @@ export default function BooksPage() {
                         <Image
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/new/travel_4.jpg');
+                                setUrl('/images/travels/travel_6.jpg');
                             }}
-                            src="/images/new/travel_4.jpg" alt="" width={1000} height={1000}
+                            src="/images/travels/travel_6.jpg" alt="" width={1000} height={1000}
                             className='mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-[80%] cursor-pointer'
                         />
                         <Image
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/new/travel_8.jpg');
+                                setUrl('/images/travels/travel_8.jpg');
                             }}
-                            src="/images/new/travel_8.jpg" alt="" width={1000} height={1000}
+                            src="/images/travels/travel_8.jpg" alt="" width={1000} height={1000}
                             className='mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-[80%] cursor-pointer'
                         />
                     </div>
@@ -104,17 +95,37 @@ export default function BooksPage() {
                         <Image
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/new/travel_6.jpg');
+                                setUrl('/images/travels/travel_9.jpg');
                             }}
-                            src="/images/new/travel_6.jpg" alt="" width={1000} height={1000}
+                            src="/images/travels/travel_9.jpg" alt="" width={1000} height={1000}
                             className='mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-[80%] cursor-pointer'
                         />
                         <Image
                             onClick={() => {
                                 openModal();
-                                setUrl('/images/new/travel_7.jpg');
+                                setUrl('/images/travels/travel_10.jpg');
                             }}
-                            src="/images/new/travel_7.jpg" alt="" width={1000} height={1000}
+                            src="/images/travels/travel_10.jpg" alt="" width={1000} height={1000}
+                            className='mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-[80%] cursor-pointer'
+                        />
+                    </div>
+                </div>
+                <div className='mt-5 w-full gap-5 h-full flex mobile:flex-col tablet:flex-row laptop:flex-row desktop:flex-row mobile:gap-x-0  tablet:gap-x-5 laptop:gap-x-4 desktop:gap-x-0'>
+                    <div className=' flex mobile:items-center tablet:items-center laptop:items-start desktop:items-start justify-center mobile:w-full tablet:w-1/2 laptop:w-1/2'>
+                        <Image  onClick={() => {
+                            openModal();
+                            setUrl('/images/travels/travel_4.jpg');
+                            }}
+                            src="/images/travels/travel_4.jpg" alt="" width={1000} height={1000}
+                            className='mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-[80%] cursor-pointer'
+                        />
+                    </div>
+                    <div className=' flex mobile:items-center tablet:items-center laptop:items-start desktop:items-start justify-start mobile:w-full tablet:w-1/2 laptop:w-1/2'>
+                        <Image  onClick={() => {
+                            openModal();
+                            setUrl('/images/travels/travel_7.jpg');
+                            }}
+                            src="/images/travels/travel_7.jpg" alt="" width={1000} height={1000}
                             className='mobile:w-1/2 tablet:w-full laptop:w-full desktop:w-[80%] cursor-pointer'
                         />
                     </div>
