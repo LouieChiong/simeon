@@ -32,7 +32,7 @@ export const Navigator = () => {
                 <div className="flex w-full items-center justify-evenly pt-5">
                     <Link href="/family" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Family</Link>
                     <Link href="/auctions" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Auctions</Link>
-                    <Link href="/author" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Contents</Link>
+                    <Link href="/content" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold w-[100px] nav-button" >Contents</Link>
                 </div>
             </div>
         </div>
