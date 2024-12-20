@@ -26,7 +26,7 @@ export default function Family() {
                     <div className='flex justify-center w-full py-8'>
                         <span className='text-gray-800 text-[50px] font-bold font-lora'> Auction Pieces </span>
                     </div>
-                    <div className='flex flex-col gap-8 mobile:items-center tablet:items-center laptop:items-center desktop:items-center justify-center w-full'>
+                    <div className='flex flex-col gap-10 mobile:items-center tablet:items-center laptop:items-center desktop:items-center justify-center w-full'>
                         <Image src="/images/auctions/auction_1.jpg" alt="" width={1000} height={1000}
                             className='transition ease-in-out delay-150 hover:-translate-y-1 cursor-pointer hover:scale-105 duration-300 w-1/2'
                             onClick={() => {
@@ -74,6 +74,20 @@ export default function Family() {
                             onClick={() => {
                                 openModal();
                                 setUrl('/images/auctions/auction_9.jpg');
+                            }}
+                        />
+                        <Image src="/images/auctions/auction_10.jpg" alt="" width={1000} height={1000}
+                            className='transition ease-in-out delay-150 hover:-translate-y-1 cursor-pointer hover:scale-110 duration-300 w-1/2'
+                            onClick={() => {
+                                openModal();
+                                setUrl('/images/auctions/auction_10.jpg');
+                            }}
+                        />
+                        <Image src="/images/auctions/auction_11.jpg" alt="" width={1000} height={1000}
+                            className='transition ease-in-out delay-150 hover:-translate-y-1 cursor-pointer hover:scale-110 duration-300 w-1/2'
+                            onClick={() => {
+                                openModal();
+                                setUrl('/images/auctions/auction_11.jpg');
                             }}
                         />
                     </div>
