@@ -60,18 +60,18 @@ export default function Family() {
                             />
                         </div>
                         <div className='flex flex-col gap-7 mobile:items-center tablet:items-center laptop:items-start desktop:items-start justify-center mobile:w-full tablet:w-1/2 laptop:w-1/2'>
-                            <Image src="/images/family/image12.jpg" alt="" width={1000} height={1000}
-                                className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer mobile:w-full tablet:w-[90%] laptop:w-[90%] desktop:w-[90%]'
-                                onClick={() => {
-                                    openModal();
-                                    setUrl('/images/family/image12.jpg');
-                                }}
-                            />
                             <Image src="/images/family/daughter.jpg" alt="" width={1000} height={1000}
                                 className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer mobile:w-full tablet:w-[90%] laptop:w-[90%] desktop:w-[90%]'
                                 onClick={() => {
                                     openModal();
                                     setUrl('/images/family/daughter.jpg');
+                                }}
+                            />
+                            <Image src="/images/family/image17.jpg" alt="" width={1000} height={1000}
+                                className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer mobile:w-full tablet:w-[90%] laptop:w-[90%] desktop:w-[90%]'
+                                onClick={() => {
+                                    openModal();
+                                    setUrl('/images/family/image17.jpg');
                                 }}
                             />
                         </div>
@@ -184,21 +184,21 @@ export default function Family() {
                                     setUrl('/images/family/image16.jpg');
                                 }}
                             />
-                            <Image src="/images/family/image17.jpg" alt="" width={1000} height={1000}
+                            <Image src="/images/family/image10.jpg" alt="" width={1000} height={1000}
                                 className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer mobile:w-full tablet:w-[90%] laptop:w-[90%] desktop:w-[90%]'
                                 onClick={() => {
-                                    openModal();
-                                    setUrl('/images/family/image17.jpg');
-                                }}
+                                openModal();
+                                setUrl('/images/family/image10.jpg');
+                            }}
                             />
                         </div>
 
                         <div className='flex flex-col gap-7 mobile:items-center tablet:items-center laptop:items-start desktop:items-start justify-center mobile:w-full tablet:w-1/2 laptop:w-1/2'>
-                            <Image src="/images/family/image10.jpg" alt="" width={1000} height={1000}
+                            <Image src="/images/family/image12.jpg" alt="" width={1000} height={1000}
                                 className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer mobile:w-full tablet:w-[90%] laptop:w-[90%] desktop:w-[90%]'
                                 onClick={() => {
                                     openModal();
-                                    setUrl('/images/family/image10.jpg');
+                                    setUrl('/images/family/image12.jpg');
                                 }}
                             />
                         </div>
