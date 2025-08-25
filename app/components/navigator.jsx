@@ -12,6 +12,9 @@ export const Navigator = () => {
             {/* Left side */}
             <div className="flex items-center justify-evenly gap-x-6 w-full">
                 <Socialite />
+                <Link href="/" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold nav-button">
+                    Home
+                </Link>
                 <Link href="/author" className="text-gray-400 hover:text-gray-600 font-normal hover:font-bold nav-button">
                     Our story
                 </Link>
