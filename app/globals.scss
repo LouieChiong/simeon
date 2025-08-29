@@ -34,3 +34,19 @@ body {
     text-wrap: balance;
   }
 }
+
+// Swiper slider button next and previous
+.swiper-button-prev,
+.swiper-button-next {
+  color: #333;          /* button color */
+  top: 50%;             /* center vertically */
+  transform: translateY(-50%);
+}
+
+.swiper-button-prev {
+  left: 10px;           /* adjust position */
+}
+
+.swiper-button-next {
+  right: 20px;
+}
