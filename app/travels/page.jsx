@@ -7,9 +7,11 @@ import Image from "next/image";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { EffectCoverflow, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
+
 // ✅ Import arrow icons
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -28,7 +30,6 @@ function useIsDesktop(breakpoint = 1024) {
 }
 
 export default function BooksPage() {
-    const [activeImage, setActiveImage] = useState("/images/travels/travel.jpg");
     const isDesktop = useIsDesktop(); // ✅ use hook inside component
     const swiperRef = useRef(null);
 
@@ -50,38 +51,8 @@ export default function BooksPage() {
         <div className="flex flex-col min-h-screen bg-white">
         <Navigator />
 
-         <main className="flex-col flex-auto flex justify-center items-center">
-            {/* ✅ Professional Header */}
-
-            <section className="flex mobile:flex-col laptop:flex-row desktop:flex-row gap-10 w-full max-w-6xl px-5 mt-32">
-            {/* LEFT: Preview Panel */}
-            <div className="flex-1 flex flex-col items-center">
-                <div className="w-auto h-[500px] rounded-2xl overflow-hidden shadow-lg">
-                <Image
-                    src={activeImage}
-                    alt="active-preview"
-                    width={1000}
-                    height={800}
-                    className="w-full h-full object-cover"
-                />
-
-                </div>
-
-                {/* ✅ Arrow Navigation Below Preview */}
-                <div className="flex gap-6 mt-6">
-                <button
-                    onClick={() => swiperRef.current?.slidePrev()}
-                    className="p-3  text-blue-500 rounded-full hover:bg-blue-700 hover:text-white transition"
-                >
-                    <ChevronLeft size={28} />
-                </button>
-                <button
-                    onClick={() => swiperRef.current?.slideNext()}
-                    className="p-3  text-blue-500 rounded-full hover:bg-blue-700 hover:text-white transition"
-                >
-                    <ChevronRight size={28} />
-                </button>
-                </div>
+        <main className="flex flex-col flex-auto justify-center items-center px-5 py-20">
+            <div className="w-full max-w-6xl flex flex-col items-center gap-6">
                 <div className="w-full text-center py-10">
                     <h1 className="text-4xl md:text-5xl font-bold tracking-wide text-gray-800">
                         Travel Gallery
@@ -90,45 +61,62 @@ export default function BooksPage() {
                         A  collection of unforgettable journeys and adventures
                     </p>
                 </div>
-            </div>
-
-            {/* RIGHT: Gallery Slider */}
-            <div className="w-full desktop:w-[300px] desktop:h-[700px] flex justify-center items-center">
-                <Swiper
-                direction={isDesktop ? "vertical" : "horizontal"}
-                slidesPerView={3}
-                spaceBetween={40}
+            {/* 🌟 3D Rotating Gallery */}
+            <Swiper
+                effect="coverflow"
+                grabCursor
                 centeredSlides
                 loop
-                modules={[Navigation]}
-                onSlideChange={(swiper) =>
-                    setActiveImage(images[swiper.realIndex])
-                }
+                slidesPerView="auto"
+                autoplay={{
+                delay: 3000, // ⏱ 5 seconds
+                disableOnInteraction: false, // keep autoplay after user interaction
+            }}
+                coverflowEffect={{
+                rotate: 45,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows: true,
+                }}
+                navigation={false}
+                modules={[EffectCoverflow, Navigation, Autoplay]}
                 onSwiper={(swiper) => (swiperRef.current = swiper)}
-                className="h-full w-full"
-                >
+                className="w-full h-[500px]"
+            >
                 {images.map((src, idx) => (
-                    <SwiperSlide
+                <SwiperSlide
                     key={idx}
-                    className="!h-auto flex items-center justify-center"
-                    >
+                    className="!w-[400px] !h-[400px] flex items-center justify-center"
+                >
+                    <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
                     <Image
                         src={src}
-                        alt={`thumb-${idx}`}
-                        width={300}
-                        height={200}
-                        className={`h-[200px] w-[300px] rounded-lg object-cover cursor-pointer transition-all duration-300 ${
-                        activeImage === src
-                            ? "ring-4 ring-blue-500 scale-105"
-                            : "opacity-70 hover:opacity-100"
-                        }`}
-                        onClick={() => setActiveImage(src)}
+                        alt={`slide-${idx}`}
+                        fill
+                        className="h-auto w-auto"
                     />
-                    </SwiperSlide>
+                    </div>
+                </SwiperSlide>
                 ))}
-                </Swiper>
+            </Swiper>
+
+            {/* Arrows */}
+            <div className="flex gap-6">
+                <button
+                onClick={() => swiperRef.current?.slidePrev()}
+                className="p-3 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition"
+                >
+                <ChevronLeft size={28} />
+                </button>
+                <button
+                onClick={() => swiperRef.current?.slideNext()}
+                className="p-3 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition"
+                >
+                <ChevronRight size={28} />
+                </button>
             </div>
-            </section>
+            </div>
         </main>
 
         <Footer />

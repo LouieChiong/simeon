@@ -14,7 +14,7 @@ const geistMono = localFont({
 
 export const metadata = {
   title: "Simeon W Johnson",
-  description: "Celebrating 75 Years of spiritual englighment",
+  description: "Celebrating Years of spiritual englighment",
 };
 
 export default function RootLayout({ children }) {
