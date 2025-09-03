@@ -11,9 +11,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #c99a42;
-  --secondary: #353535;
+  --primary: #D4AF37;
+  --secondary: #3b2d0a;
   --content: #404040
+  --text-primary: #ffffff;
+  --text-gold: #FFD700;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,4 +51,43 @@ body {
 
 .swiper-button-next {
   right: 20px;
+}
+
+.bg-primary {
+  background: linear-gradient(
+    15deg,
+    var(--primary) 0%,
+    var(--secondary) 100%
+  );
+}
+
+.bg-primary-secondary {
+  background: black;
+}
+
+.text-gold {
+  color: var(--text-gold);
+}
+
+.fill-main {
+  fill: var(--primary);
+
+  &:hover {
+    fill: var(--secondary);
+  }
+}
+
+.fill-gold {
+  fill: var(--text-gold);
+
+  &:hover {
+    fill: #D4AF37;
+  }
+}
+
+.stroke-main {
+  stroke: var(--primary);
+  &:hover {
+    stroke: var(--secondary);
+  }
 }

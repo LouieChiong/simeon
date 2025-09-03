@@ -46,8 +46,12 @@
     font-family: 'Garamond', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 14px;
-    color: var(--foreground);
+    font-size: 17px;
+    color: var(--text-gold);
+
+    &:hover {
+        color: #D4AF37;
+    }
 }
 
 .header-content {
