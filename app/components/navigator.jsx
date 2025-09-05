@@ -6,7 +6,7 @@ import HamburgerButton from "./hamburgerButton";
 
 export const Navigator = () => {
     return (
-        <nav className="bg-primary-secondary min-h-24 w-full absolute top-0 z-10 flex-col justify-center flex">
+        <nav className="bg-primary-secondary sticky min-h-24 w-full  top-0 z-10 flex-col justify-center flex">
         {/* Desktop Navbar */}
         <div className="hidden laptop:flex w-full items-center justify-between px-6">
             {/* Left side */}

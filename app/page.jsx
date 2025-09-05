@@ -5,79 +5,68 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="bg-white w-full flex flex-col items-center justify-center relative">
-      {/* Section 1: Split Hero */}
+    <main>
         <Navigator />
-      <section
-        className="relative w-full h-screen flex items-center justify-center text-center px-6"
-        style={{
-          backgroundImage: `url('/images/image_6.jpeg')`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
-      >
-      {/* Black gradient overlay */}
-      {/* <div className="absolute opacity-50 inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80"></div> */}
-
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/20"></div>
-
-        {/* Content */}
-        <div className="relative max-w-3xl mx-auto">
-          <h1
-            className="text-white font-bold mobile:text-[40px] tablet:text-[60px] laptop:text-[72px] leading-tight"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Simeon W. Johnson
-          </h1>
-          <p
-            className="mt-4 text-gray-200 text-lg tracking-wide font-bold"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Author • Speaker • Heritage Keeper
-          </p>
-          <div className="mt-6 flex flex-col gap-y-6">
-            <p className="text-gray-300 leading-relaxed side-text">
-              Preserving the Johnson Family Heritage and inspiring
-              generations through words, wisdom, and storytelling.
+      {/* Hero Section */}
+      <div className="hero-wrapper">
+        <section className="hero-section section">
+          <div className="relative max-w-3xl mx-auto">
+            <h1
+              className="text-white font-bold mobile:text-[40px] tablet:text-[60px] laptop:text-[72px] leading-tight"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Simeon W. Johnson
+            </h1>
+            <p
+              className="mt-4 text-gray-200 text-lg tracking-wide font-bold"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              Author • Speaker • Heritage Keeper
             </p>
+            <div className="mt-6 flex flex-col gap-y-6">
+              <p className="text-gray-300 leading-relaxed side-text">
+                Preserving the Johnson Family Heritage and inspiring
+                generations through words, wisdom, and storytelling.
+              </p>
 
-            <div className="flex justify-center gap-y-4">
-              <Socialites color="fill-white stroke-white" />
+              <div className="flex justify-center gap-y-4">
+                <Socialites color="fill-white stroke-white" />
+              </div>
             </div>
           </div>
-        </div>
+        </section>
+        <div className="scroll-spacer"></div>
+      </div>
+
+      {/* Content Section 1 */}
+      <section className="section content-section flex items-center justify-center text-center">
+        <blockquote className="border-l-4 border-gray-400  italic text-xl leading-relaxed my-8 max-w-3xl mx-auto">
+          <p className="mb-4">
+
+            “Think it not strange concerning the fiery trial which is to try you, as
+            though some strange things happen unto you.”
+          </p>
+
+          <p className="mb-4">
+            The vicissitudes of life are a turbid ebb and flow of human enigmatic
+            misery. The good news is!
+            <span className="font-semibold">
+              “On Christ the Solid Rock I stand: All other ground is sinking sand.”
+            </span>
+          </p>
+
+          <div className="mt-4 not-italic font-medium text-center">
+            — SIMEON W. JOHNSON BOOK MINISTRY
+          </div>
+        </blockquote>
       </section>
 
+      {/* Content Section 2 */}
+      <section className=" sectionw-full py-24 bg-gray-100 flex flex-col laptop:flex-row items-center justify-center gap-12 px-8 laptop:px-24">
 
-      {/* Section 2: Quote */}
-      <section className="bg-primary w-full min-h-[60vh] py-24 flex items-center justify-center text-center relative z-10">
-        <div className="max-w-3xl px-6">
-          <blockquote className="border-l-4 border-gray-400 pl-6 italic text-gray-800 text-xl leading-relaxed my-8">
-              <p className="mb-4  text-white ">
-                “Think it not strange concerning the fiery trial which is to try you, as
-                though some strange things happen unto you.”
-              </p>
-
-              <p className="mb-4  text-white ">
-                The vicissitudes of life are a turbid ebb and flow of human enigmatic
-                misery. The good news is! <span className="font-semibold">“On Christ the
-                Solid Rock I stand: All other ground is sinking sand.”</span>
-              </p>
-
-              <footer className="text-white  mt-4 text-right not-italic font-medium">
-                — SIMEON W. JOHNSON BOOK MINISTRY
-              </footer>
-          </blockquote>
-        </div>
-      </section>
-
-      {/* Section 3: About the Author */}
-      <section className="w-full py-24 bg-white flex flex-col laptop:flex-row items-center justify-center gap-12 px-8 laptop:px-24">
-        {/* Author Image (smaller portrait style) */}
+          {/* Author Image (smaller portrait style) */}
         <div className="w-full laptop:w-1/3 flex justify-center">
           <Image
             src="/images/section_1.jpg"
