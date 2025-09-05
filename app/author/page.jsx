@@ -5,7 +5,7 @@ import Footer from '../components/footer';
 
 export default function AuthorPages() {
     return (
-        <div className="bg-white w-full flex flex-col items-center justify-center min-h-screen h-auto relative">
+        <div className="bg-yellow-100 w-full flex flex-col items-center justify-center min-h-screen h-auto relative">
             <Navigator />
             <section className="flex desktop:flex-col tablet:flex-col laptop:flex-col mobile:flex-col w-fullh-full mt-44 desktop:px-40 laptop:px-30 tablet:px-10 mobile:px-5">
                 <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col-reverse mobile:flex-col-reverse w-full h-full gap-x-5">

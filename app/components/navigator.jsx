@@ -6,7 +6,7 @@ import HamburgerButton from "./hamburgerButton";
 
 export const Navigator = () => {
     return (
-        <nav className="bg-primary-secondary min-h-24 w-full absolute top-0 z-10 flex-col justify-center flex">
+        <nav className="bg-primary-secondary sticky min-h-24 w-full  top-0 z-10 flex-col justify-center flex">
         {/* Desktop Navbar */}
         <div className="hidden laptop:flex w-full items-center justify-between px-6">
             {/* Left side */}
@@ -19,13 +19,10 @@ export const Navigator = () => {
                     Our story
                 </Link>
                 <Link href="/books" className="transform transition-transform duration-300 hover:scale-110 font-normal hover:font-bold nav-button">
-                    As an author
+                    My Books
                 </Link>
-                <Link href="/travels" className="transform transition-transform duration-300 hover:scale-110 font-normal hover:font-bold nav-button">
-                    Travels
-                </Link>
-                <Link href="/family" className="transform transition-transform duration-300 hover:scale-110 font-normal hover:font-bold nav-button">
-                    Family
+                <Link href="/galleries" className="transform transition-transform duration-300 hover:scale-110 font-normal hover:font-bold nav-button">
+                    Galleries
                 </Link>
                 <Link href="/auctions" className="transform transition-transform duration-300 hover:scale-110 font-normal hover:font-bold nav-button">
                     Auctions
@@ -42,7 +39,7 @@ export const Navigator = () => {
 
         <div>
             <div className="hidden w-full md:block md:w-auto border-t-2 !z-[999]" id="drop-down-navbar">
-                <ul className="flex flex-col font-medium mt-4 px-3 bg-primary gap-y-4">
+                <ul className="flex flex-col font-medium mt-4 px-3 gap-y-4">
                     <li className="">
                         <a href="/" className="block py-2 px-3 text-white hover:font-bold menu-sm" aria-current="page">Home</a>
                     </li>
@@ -50,13 +47,10 @@ export const Navigator = () => {
                         <a href="/author" className="block py-2 px-3 text-white hover:font-bold menu-sm" aria-current="page">Our story</a>
                     </li>
                     <li className="">
-                        <a href="/books" className="block py-2 px-3 text-white hover:font-bold menu-sm">As an author</a>
+                        <a href="/books" className="block py-2 px-3 text-white hover:font-bold menu-sm">My Books</a>
                     </li>
                     <li className="">
-                        <a href="/travels" className="block py-2 px-3 text-white hover:font-bold  menu-sm">Travels</a>
-                    </li>
-                    <li className="">
-                        <a href="/family" className="block py-2 px-3 text-white hover:font-bold  menu-sm">Family</a>
+                        <a href="/galleries" className="block py-2 px-3 text-white hover:font-bold  menu-sm">Galleries</a>
                     </li>
                     <li className="">
                         <a href="/auctions" className="block py-2 px-3 text-white hover:font-bold  menu-sm">Auctions</a>
