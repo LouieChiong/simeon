@@ -52,7 +52,7 @@ export default function Galleries() {
     ]
 
     return (
-        <div className="flex flex-col min-h-screen bg-white">
+        <div className="flex flex-col min-h-screen !bg-yellow-100">
         <Navigator />
         <main className="flex flex-col flex-auto justify-center items-center px-5 py-20">
             <div className="w-full flex flex-col items-center gap-6">

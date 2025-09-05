@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function BooksPage() {
     return (
-        <div className="bg-white w-full flex flex-col items-center justify-center min-h-screen h-auto">
+        <div className="bg-yellow-100 w-full flex flex-col items-center justify-center min-h-screen h-auto">
         <Navigator />
             <section className="flex flex-col w-full h-full mt-44 desktop:px-40 laptop:px-10 tablet:px-10 mobile:px-0">
                 <div className='mb-3 w-full h-auto flex mobile:flex-col tablet:flex-row laptop:flex-row desktop:flex-row mobile:gap-x-0  tablet:gap-x-5 laptop:gap-x-4 desktop:gap-x-0'>

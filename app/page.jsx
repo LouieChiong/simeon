@@ -60,8 +60,7 @@ export default function Home() {
       </section>
 
       {/* Content Section 2 */}
-      <section className=" sectionw-full py-24 bg-gray-100 flex flex-col laptop:flex-row items-center justify-center gap-12 px-8 laptop:px-24">
-
+      <section className=" sectionw-full py-24 bg-yellow-100 flex flex-col laptop:flex-row items-center justify-center gap-12 px-8 laptop:px-24">
           {/* Author Image (smaller portrait style) */}
         <div className="w-full laptop:w-1/3 flex justify-center">
           <Image

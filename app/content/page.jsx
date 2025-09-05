@@ -10,7 +10,7 @@ export default function ContentPage() {
     ];
 
     return (
-        <div className="bg-white w-full flex flex-col min-h-screen">
+        <div className="bg-yellow-100 w-full flex flex-col min-h-screen">
         <Navigator />
         <main className="flex-grow flex flex-col w-full my-12 desktop:px-40 laptop:px-10 tablet:px-10 mobile:px-0">
             {/* Video + Images in one row */}
