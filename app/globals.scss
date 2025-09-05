@@ -107,6 +107,20 @@ body {
 .hero-section {
   background-image: url("/images/image_6.jpeg");
   min-height: 100vh;
+  position: relative; /* required for overlay */
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.229); /* adjust opacity */
+  z-index: 1;
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 2; /* make sure content stays above overlay */
 }
 
 .cta-section {

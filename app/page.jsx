@@ -30,10 +30,6 @@ export default function Home() {
                 Preserving the Johnson Family Heritage and inspiring
                 generations through words, wisdom, and storytelling.
               </p>
-
-              <div className="flex justify-center gap-y-4">
-                <Socialites color="fill-white stroke-white" />
-              </div>
             </div>
           </div>
         </section>
@@ -98,6 +94,22 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      <div className="cta-wrapp">
+        <section className="cta-section section">
+          <div className="relative max-w-3xl mx-auto">
+              <div className="flex mobile:flex-col tablet:flex-col laptop:flex-row justify-center items-center w-full tmt-3 h-auto ">
+                <div>
+                    <h3 className='book-title !text-white font-bold mobile:!text-[30px] tablet:!text-[50px] laptop:!text-[50px]'>&quot;My Mission and Vision&quot;</h3>
+                    <p className='qoutes indent-10 text-[25px] font-bold !text-white'>
+                        To promulgate the Good News Story around the World, changing lives in preparation for the Kingdom of God. Amen!
+                    </p>
+                </div>
+            </div>
+          </div>
+        </section>
+        <div className="scroll-spacer"></div>
+      </div>
     </main>
   );
 }
