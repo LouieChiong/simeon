@@ -18,6 +18,7 @@ export default function Galleries() {
     const familyImages = [
     "/images/family/father.jpg",
     "/images/family/wife.jpg",
+    "/images/family/wife_and_simeon.jpg",
     "/images/family/image13.jpg",
     "/images/family/daughter.jpg",
     "/images/family/image17.jpg",

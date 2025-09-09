@@ -1,19 +1,41 @@
+"use client";
+import React, { useRef } from "react";
 import Navigator from "../components/navigator";
 import '../globals.scss'
 import Image from "next/image";
 import Footer from '../components/footer';
+import "swiper/css";
+import "swiper/css/navigation";
 
 export default function AuthorPages() {
+    const images = [
+            "/images/section_1.jpg",
+            "/images/image_4.jpg",
+            "/images/image_1.jpg",
+            "/images/image_7.jpg",
+    ];
+    const swiperRef = useRef(null);
+
     return (
         <div className="bg-yellow-100 w-full flex flex-col items-center justify-center min-h-screen h-auto relative">
             <Navigator />
-            <section className="flex desktop:flex-col tablet:flex-col laptop:flex-col mobile:flex-col w-fullh-full mt-44 desktop:px-40 laptop:px-30 tablet:px-10 mobile:px-5">
+            <section className="flex desktop:flex-col tablet:flex-col laptop:flex-col mobile:flex-col w-fullh-full mt-44 desktop:px-52 laptop:px-30 tablet:px-10 mobile:px-5">
                 <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col-reverse mobile:flex-col-reverse w-full h-full gap-x-5">
-                    <div className="laptop:w-full desktop:w-1/2 tablet:w-full mobile:w-full h-full flex flex-col ">
-                        <div className="w-full mobile:mt-10 tablet:mt-10 laptop:mt-0 h-[300px] flex flex-col justify-center mobile:items-center tablet:items-center laptop:items-start indent-9 header-content mobile:bg-top tablet:bg-top laptop:bg-left-top">
-                            <h1 className="name-title tablet:text-[50px] mobile:text-[30px] laptop:text-[50px] desktop:text-[50px]">Simeon W. Johnson</h1>
-                            <span className="name-description font-bold text-xl">The Patriarch</span>
-                            <small className="name-description font-normal text-lg">The Simeon W Johnson family heritage</small>
+                    <div className="w-full h-full flex flex-col ">
+                        <div className="relative w-full h-[300px] flex flex-col justify-center items-center indent-9 mobile:bg-top tablet:bg-top laptop:bg-left-top">
+                            <Image
+                            src="/images/Initial.png"
+                            alt=""
+                            width={200}
+                            height={200}
+                            className="absolute z-0"
+                            />
+                            <div className="z-10 flex flex-col items-center">
+                                <h1 className=" name-title tablet:text-[50px] mobile:text-[30px] laptop:text-[50px] desktop:text-[50px]">Simeon W. Johnson</h1>
+                                <span className="name-description font-bold text-xl">The Patriarch</span>
+                                <small className="name-description font-normal text-lg">The Simeon W Johnson family heritage</small>
+
+                            </div>
                         </div>
 
                         <div className="flex gap-y-4 flex-col h-full p-2 z-20">
@@ -35,29 +57,10 @@ export default function AuthorPages() {
                         </p>
                         </div>
                     </div>
-                    <div className="laptop:w-full desktop:w-1/2 tablet:w-full flex justify-center items-baseline px-5">
-                        <Image
-                        src="/images/section_1.jpg"
-                        alt=""
-                        width={600} // Add an appropriate width value
-                        height={750} // Add an appropriate height value
-                        className="rounded-lg"
-                        />
-                    </div>
                 </div>
 
-                <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col mobile:flex-col w-full h-full gap-x-5 laptop:mt-6 tablet:mt-12 mobile:mt-12">
-                    <div className="laptop:w-full desktop:w-1/2 tablet:w-full flex justify-center items-baseline px-5">
-                        <Image
-                            src="/images/image_4.jpg"
-                            alt=""
-                            width={600}
-                            height={750}
-                            className="rounded-lg"
-                            />
-                    </div>
-
-                    <div className="flex flex-col tablet:w-full laptop:w-1/2 desktop:w-1/2 tracking-widest text-md leading-loose indent-8 content text-justify laptop:mt-0 tablet:mt-10 h-full">
+                <div className="flex  w-full h-full gap-x-5 laptop:mt-6 tablet:mt-12 mobile:mt-12">
+                    <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-justify laptop:mt-0 tablet:mt-10 h-full">
                         <p>
                         Born in Jamaica as the youngest of thirteen children, Simeon Johnson overcame significant hardships from an early age. Tragically, he witnessed his mother’s
                         death during his childhood, an event that cast a long shadow over his formative years. As a teenager,
@@ -85,14 +88,21 @@ export default function AuthorPages() {
                     </div>
                 </div>
 
-                <div className="flex flex-col w-full justify-center items-center mt-10">
-                    <iframe frameborder="0" allowfullscreen=""
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" title="A Myopic Life Resonated From The Brink of The Abyss"
-                        className="w-full h-[700px]"
-                        src="https://www.youtube-nocookie.com/embed/iJePe-bTqzQ?controls=1&amp;rel=0&amp;playsinline=0&amp;modestbranding=0&amp;autoplay=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fsimeonwjohnsonbookministry.us&amp;widgetid=1" id="widget2">
-                    </iframe>
+                <div className="w-full">
+                    <div className="w-full h-[400px] relative flex flex-row gap-2">
+                        {images.map((src, idx) => (
+                            <div key={idx} className="relative w-full h-full transform transition-transform duration-300 ease-in-out hover:scale-105 hover:z-10 rounded-xl overflow-hidden">
+                                <Image
+                                src={src}
+                                alt={`slide-${idx}`}
+                                fill
+                                className="object-cover"
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
+
 
                 <div className="flex flex-col w-full tablet:px-14 mobile:px-1 mb-16 mt-10">
                     <span className="qoutes laptop:text-[58px] tablet:text-[48px] mobile:text-[40px] text-left">
@@ -102,17 +112,7 @@ export default function AuthorPages() {
                 </div>
 
                 <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col mobile:flex-col w-full h-full gap-x-5 laptop:mt-6 tablet:mt-12 mobile:mt-12">
-                    <div className="laptop:w-full desktop:w-1/2 tablet:w-full flex justify-center items-baseline">
-                        <Image
-                            src="/images/family/image13.jpg"
-                            alt=""
-                            width={600}
-                            height={750}
-                            className="rounded-lg"
-                            />
-                    </div>
-
-                    <div className="flex flex-col tablet:w-full laptop:w-1/2 desktop:w-1/2 tracking-widest text-md leading-loose indent-8 content text-justify laptop:mt-0 tablet:mt-10 h-full">
+                    <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-justify laptop:mt-0 tablet:mt-10 h-full">
                         <p>
                         Happily married  to <b>Dorothy Johnson</b> a quintessential embodiment of a loving mother and devoted wife,
                         whose life revolves around nurturing her family and supporting her husband, Simeon Johnson, a distinguished writer whose literary pursuits often demand both
@@ -156,13 +156,7 @@ export default function AuthorPages() {
 
                 <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-center mt-3 h-auto mb-12">
                     <div className="flex mobile:flex-col tablet:flex-col laptop:flex-row justify-center items-center w-full tmt-3 h-auto ">
-                        <Image
-                            src="/images/image_1.jpg"
-                            alt=""
-                            width={600}
-                            height={750}
-                            className="rounded-lg mobile:w-[50%] tablet:w-[25%] mobile:mb-5 tablet:mb-0"
-                            />
+
                         <div>
                             <h3 className='book-title font-bold mobile:!text-[30px] tablet:!text-[50px] laptop:!text-[50px]'>&quot;My Mission and Vision&quot;</h3>
                             <p className='qoutes indent-10 text-[25px] font-bold'>
@@ -171,6 +165,15 @@ export default function AuthorPages() {
                         </div>
                     </div>
 
+                </div>
+
+                <div className="mb-10 flex flex-col w-full justify-center items-center mt-10">
+                    <iframe frameborder="0" allowfullscreen=""
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" title="A Myopic Life Resonated From The Brink of The Abyss"
+                        className="w-full h-[700px]"
+                        src="https://www.youtube-nocookie.com/embed/iJePe-bTqzQ?controls=1&amp;rel=0&amp;playsinline=0&amp;modestbranding=0&amp;autoplay=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fsimeonwjohnsonbookministry.us&amp;widgetid=1" id="widget2">
+                    </iframe>
                 </div>
             </section>
             <Footer />
