@@ -68,6 +68,7 @@ export default function BooksPage() {
                 <div className="grid mobile:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 desktop:grid-cols-2 gap-12">
                 {books.map((book, idx) => (
                     <div
+                    key={idx}
                     className="relative flex flex-col items-center justify-center"
                     >
                     <Link
@@ -77,7 +78,6 @@ export default function BooksPage() {
                     className="cursor-pointer"
                     >
                         <Image
-                            key={idx}
                             onMouseEnter={() => setHoveredBook(idx)}
                             // onMouseLeave={() => setHoveredBook(null)}
                             src={book.img}
