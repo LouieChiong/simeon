@@ -86,11 +86,11 @@ export default function Galleries() {
                     {familyImages.map((src, idx) => (
                     <SwiperSlide
                         key={idx}
-                        className="!h-[400px] flex items-center justify-center"
+                        className="!h-[4600px] flex items-center justify-center"
                         onMouseEnter={() => swiperRef.current?.autoplay.stop()}
                         onMouseLeave={() => swiperRef.current?.autoplay.start()}
                     >
-                        <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+                        <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl">
                         <Image
                             src={src}
                             alt={`slide-${idx}`}
@@ -103,7 +103,7 @@ export default function Galleries() {
                 </Swiper>
             </div>
 
-            <div className="w-full flex flex-col items-center gap-6">
+            <div className="w-full flex flex-col items-center gap-6 mt-10">
                 <div className="w-full text-center">
                     <h1 className="text-4xl md:text-5xl font-bold tracking-wide text-gray-800">
                     Travel Gallery
@@ -129,7 +129,7 @@ export default function Galleries() {
                     navigation={false}
                     modules={[Navigation, Autoplay]}
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
-                    className="w-full h-[500px]"
+                    className="w-full h-[600px]"
                 >
                     {travelImages.map((src, idx) => (
                     <SwiperSlide
@@ -138,7 +138,7 @@ export default function Galleries() {
                         onMouseEnter={() => swiperRef.current?.autoplay.stop()}
                         onMouseLeave={() => swiperRef.current?.autoplay.start()}
                     >
-                        <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+                        <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl">
                         <Image
                             src={src}
                             alt={`slide-${idx}`}
