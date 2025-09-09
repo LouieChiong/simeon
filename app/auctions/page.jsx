@@ -26,7 +26,7 @@ function useIsDesktop(breakpoint = 1024) {
     }, [breakpoint]);
 
     return isDesktop;
-    }
+}
 
     export default function Auction() {
     const isDesktop = useIsDesktop();
