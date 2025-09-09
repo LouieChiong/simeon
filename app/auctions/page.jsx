@@ -29,7 +29,6 @@ function useIsDesktop(breakpoint = 1024) {
 }
 
     export default function Auction() {
-    const isDesktop = useIsDesktop();
     const swiperRef = useRef(null);
 
     const images = [
@@ -37,8 +36,7 @@ function useIsDesktop(breakpoint = 1024) {
     "/images/auctions/auction_2.jpg",
     "/images/auctions/auction_4.jpg",
     "/images/auctions/auction_5.jpg",
-    "/images/auctions/auction_6.jpg",
-    "/images/auctions/auction_7.jpg",
+    "/images/auctions/auction_8.jpg",
     "/images/auctions/auction_9.jpg",
     "/images/auctions/auction_10.jpg",
     "/images/auctions/auction_11.jpg",
