@@ -41,6 +41,7 @@ export default function ContentPage() {
         '/images/content/image_4.jpg',
         '/images/content/image_5.jpg',
         '/images/content/image_6.png',
+        '/images/content/image_7.png',
     ];
 
     return (
