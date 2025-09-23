@@ -12,7 +12,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // ✅ Import arrow icons
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 function useIsDesktop(breakpoint = 1024) {
     const [isDesktop, setIsDesktop] = useState(false);
@@ -31,6 +31,8 @@ export default function ContentPage() {
     const isDesktop = useIsDesktop();
     const swiperRef = useRef(null);
 
+    const [modalImage, setModalImage] = useState(null);
+
     const images = [
         "/images/auctions/auction_12.png",
         '/images/content/maya.png',
@@ -43,6 +45,16 @@ export default function ContentPage() {
         '/images/content/image_6.png',
         '/images/content/image_7.png',
     ];
+
+    const handleOpenModal = (src) => {
+        setModalImage(src);
+        swiperRef.current?.autoplay.stop();
+    };
+
+    const handleCloseModal = () => {
+        setModalImage(null);
+        swiperRef.current?.autoplay.start();
+    };
 
     return (
         <div className="bg-yellow-100 w-full flex flex-col min-h-screen">
@@ -72,8 +84,8 @@ export default function ContentPage() {
                     loop
                     slidesPerView="auto"
                     autoplay={{
-                    delay: 3000, // ⏱ 5 seconds
-                    disableOnInteraction: false, // keep autoplay after user interaction
+                    delay: 3000,
+                    disableOnInteraction: false,
                 }}
                     coverflowEffect={{
                     rotate: 45,
@@ -97,7 +109,8 @@ export default function ContentPage() {
                             src={src}
                             alt={`slide-${idx}`}
                             fill
-                            className=" h-auto w-auto"
+                            className="h-auto w-auto cursor-pointer"
+                            onClick={() => handleOpenModal(src)}
                         />
                         </div>
                     </SwiperSlide>
@@ -123,6 +136,27 @@ export default function ContentPage() {
             </div>
         </main>
         <Footer />
+
+        {/* Modal */}
+        {modalImage && (
+            <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+                <div className="relative max-w-5xl w-full h-[80%] flex justify-center items-center">
+                    <Image
+                        src={modalImage}
+                        alt="modal-preview"
+                        fill
+                        className="object-contain"
+                    />
+                    <button
+                        onClick={handleCloseModal}
+                        className="absolute top-4 right-4 p-2 rounded-full bg-white text-black hover:bg-gray-200"
+                    >
+                        <X size={28} />
+                    </button>
+                </div>
+            </div>
+        )}
+
         </div>
     );
 }
