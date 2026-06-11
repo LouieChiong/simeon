@@ -2,6 +2,7 @@ import "./globals.scss";
 import Socialites from "./components/socialite";
 import Navigator from "./components/navigator";
 import Image from "next/image";
+import SocialMediaConnect from "./components/SocialMediaConnect";
 
 export default function Home() {
   return (
@@ -109,6 +110,9 @@ export default function Home() {
         </section>
         <div className="scroll-spacer"></div>
       </div>
+
+      {/* Social Media Connect Section */}
+      <SocialMediaConnect />
     </main>
   );
 }
