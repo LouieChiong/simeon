@@ -76,6 +76,19 @@ export default function ContentPage() {
                 ></iframe>
             </div>
 
+            <div className="bg-black h-[600px] w-full rounded-2xl flex justify-center items-center overflow-hidden shadow-xl mb-10">
+                <iframe
+                frameBorder="0"
+                allowFullScreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="A Myopic Life Resonated From The Brink of The Abyss"
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/iy68ZzC0ymM?si=7MivugWgEJt6zfYU&controls=1&rel=0&playsinline=0&modestbranding=0&autoplay=0"
+                id="widget2"
+                ></iframe>
+            </div>
+
                 {/* 🌟 3D Rotating Gallery */}
                 <Swiper
                     effect="coverflow"
