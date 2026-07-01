@@ -2,6 +2,7 @@ import "./globals.scss";
 import Socialites from "./components/socialite";
 import Navigator from "./components/navigator";
 import Image from "next/image";
+import Link from "next/link";
 import SocialMediaConnect from "./components/SocialMediaConnect";
 
 export default function Home() {
@@ -9,37 +10,54 @@ export default function Home() {
     <main>
         <Navigator />
       {/* Hero Section */}
-      <div className="hero-wrapper">
-        <section className="hero-section section">
-          <div className="relative max-w-3xl mx-auto">
+      <section className="hero-light">
+        <span className="hero-watermark" aria-hidden="true">JOHNSON</span>
+        <div className="hero-content-grid">
+          <div>
+            <p className="hero-eyebrow" data-aos="fade-up" data-aos-delay="100">
+              Author • Speaker • Heritage Keeper
+            </p>
             <h1
-              className="text-white font-bold mobile:text-[40px] tablet:text-[60px] laptop:text-[72px] leading-tight"
+              className="hero-title font-bold mobile:text-[40px] tablet:text-[60px] laptop:text-[72px] leading-tight"
               data-aos="fade-up"
-              data-aos-delay="100"
+              data-aos-delay="150"
             >
-              Simeon W. Johnson
+              Simeon W.
+              <span className="hero-title-script">Johnson</span>
             </h1>
             <p
-              className="mt-4 text-gray-200 text-lg tracking-wide font-bold"
+              className="hero-desc mt-6 leading-relaxed"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Author • Speaker • Heritage Keeper
+              Preserving the Johnson Family Heritage and inspiring
+              generations through words, wisdom, and storytelling.
             </p>
-            <div className="mt-6 flex flex-col gap-y-6">
-              <p className="text-gray-300 leading-relaxed side-text">
-                Preserving the Johnson Family Heritage and inspiring
-                generations through words, wisdom, and storytelling.
-              </p>
+            <div className="hero-links mt-8" data-aos="fade-up" data-aos-delay="250">
+              <Link href="/author" className="hero-link-primary">
+                Discover the Legacy
+              </Link>
+              <Link href="#mission" className="hero-link-secondary">
+                The Mission
+              </Link>
             </div>
           </div>
-        </section>
-        <div className="scroll-spacer"></div>
-      </div>
+          <div className="hero-photo-frame" data-aos="fade-up" data-aos-delay="150">
+            <Image
+              src="/images/section_1.jpg"
+              alt="Simeon W. Johnson"
+              width={420}
+              height={336}
+              priority
+            />
+          </div>
+        </div>
+        <div className="hero-scroll-cue">Scroll</div>
+      </section>
 
       {/* Content Section 1 */}
       <section className="section content-section flex items-center justify-center text-center">
-        <blockquote className="border-l-4 border-gray-400  italic text-xl leading-relaxed my-8 max-w-3xl mx-auto">
+        <blockquote className="border-l-4 italic text-xl leading-relaxed my-8 max-w-3xl mx-auto" style={{ borderColor: "var(--primary)" }}>
           <p className="mb-4">
 
             “Think it not strange concerning the fiery trial which is to try you, as
@@ -61,7 +79,7 @@ export default function Home() {
       </section>
 
       {/* Content Section 2 */}
-      <section className=" sectionw-full py-24 bg-yellow-100 flex flex-col laptop:flex-row items-center justify-center gap-12 px-8 laptop:px-24">
+      <section className="w-full py-24 flex flex-col laptop:flex-row items-center justify-center gap-12 px-8 laptop:px-24" style={{ backgroundColor: "var(--cream)" }}>
           {/* Author Image (smaller portrait style) */}
         <div className="w-full laptop:w-1/3 flex justify-center">
           <Image
@@ -75,7 +93,7 @@ export default function Home() {
 
         {/* Author Bio */}
         <div className="w-full laptop:w-2/3 max-w-2xl">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">About the Author</h2>
+          <h2 className="section-title text-4xl text-gray-900 mb-6">About the Author</h2>
           <p className="text-gray-700 leading-relaxed mb-4 side-text">
             Simeon W. Johnson is a passionate storyteller and heritage keeper,
             dedicated to preserving the legacy of his family and sharing wisdom
@@ -95,7 +113,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="cta-wrapp">
+      <div id="mission" className="cta-wrapp">
         <section className="cta-section section">
           <div className="relative max-w-3xl mx-auto">
               <div className="flex mobile:flex-col tablet:flex-col laptop:flex-row justify-center items-center w-full tmt-3 h-auto ">

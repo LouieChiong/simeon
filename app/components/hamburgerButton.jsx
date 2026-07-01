@@ -14,7 +14,8 @@ export const HamburgerButton = () => {
             <button
                 data-collapse-toggle="drop-down-navbar"
                 type="button"
-                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[rgba(212,175,55,0.35)]"
+                style={{ color: "var(--text-gold)" }}
                 aria-controls="drop-down-navbar"
                 aria-expanded={isOpen}
                 onClick={toggleMenu}
