@@ -44,11 +44,12 @@ export default function Home() {
           </div>
           <div className="hero-photo-frame" data-aos="fade-up" data-aos-delay="150">
             <Image
-              src="/images/section_1.jpg"
+              src="/images/image_6.jpeg"
               alt="Simeon W. Johnson"
-              width={420}
-              height={336}
+              width={760}
+              height={480}
               priority
+              className="w-full h-auto object-cover"
             />
           </div>
         </div>
@@ -56,8 +57,18 @@ export default function Home() {
       </section>
 
       {/* Content Section 1 */}
-      <section className="section content-section flex items-center justify-center text-center">
-        <blockquote className="border-l-4 italic text-xl leading-relaxed my-8 max-w-3xl mx-auto" style={{ borderColor: "var(--primary)" }}>
+      <section
+        className="section content-section flex items-center justify-center text-center"
+        style={{
+          height: "200px",
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1680026319202-fcb822e0ab91?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <blockquote className="border-l-4 italic text-xl leading-relaxed my-8 max-w-3xl mx-auto text-white" style={{ borderColor: "var(--primary)" }}>
           <p className="mb-4">
 
             “Think it not strange concerning the fiery trial which is to try you, as
