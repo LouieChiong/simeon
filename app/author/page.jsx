@@ -1,45 +1,59 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import Navigator from "../components/navigator";
 import '../globals.scss'
 import Image from "next/image";
 import Footer from '../components/footer';
-import "swiper/css";
-import "swiper/css/navigation";
+
+const Divider = () => (
+    <div className="section-divider" aria-hidden="true">
+        <span className="section-divider-mark"></span>
+    </div>
+);
 
 export default function AuthorPages() {
     const images = [
-            "/images/section_1.jpg",
-            "/images/image_4.jpg",
-            "/images/image_1.jpg",
-            "/images/image_7.jpg",
+        "/images/section_1.jpg",
+        "/images/image_4.jpg",
+        "/images/image_1.jpg",
+        "/images/image_7.jpg",
     ];
-    const swiperRef = useRef(null);
 
     return (
-        <div className="bg-yellow-100 w-full flex flex-col items-center justify-center min-h-screen h-auto relative">
+        <div className="w-full flex flex-col items-center justify-center min-h-screen h-auto relative" style={{ backgroundColor: "var(--cream)" }}>
             <Navigator />
-            <section className="flex desktop:flex-col tablet:flex-col laptop:flex-col mobile:flex-col w-fullh-full mt-44 desktop:px-52 laptop:px-30 tablet:px-10 mobile:px-5">
-                <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col-reverse mobile:flex-col-reverse w-full h-full gap-x-5">
-                    <div className="w-full h-full flex flex-col ">
-                        <div className="relative w-full h-[300px] flex flex-col justify-center items-center indent-9 mobile:bg-top tablet:bg-top laptop:bg-left-top">
-                            <Image
-                            src="/images/Initial.png"
-                            alt=""
-                            width={200}
-                            height={200}
-                            className="absolute z-0"
-                            />
-                            <div className="z-10 flex flex-col items-center">
-                                <h1 className=" name-title tablet:text-[50px] mobile:text-[30px] laptop:text-[50px] desktop:text-[50px]">Simeon W. Johnson</h1>
-                                <span className="name-description font-bold text-xl">The Patriarch</span>
-                                <small className="name-description font-normal text-lg">The Simeon W Johnson family heritage</small>
 
-                            </div>
+            <section className="w-full max-w-screen-xl mt-32 desktop:px-24 laptop:px-16 tablet:px-10 mobile:px-5">
+
+                {/* Header */}
+                <div className="relative w-full min-h-[300px] flex flex-col justify-center items-center text-center">
+                    <Image
+                        src="/images/Initial.png"
+                        alt=""
+                        width={200}
+                        height={200}
+                        className="absolute inset-0 m-auto z-0 opacity-80"
+                    />
+                    <div className="z-10 flex flex-col items-center">
+                        <span className="section-eyebrow">Author • Patriarch • Man of Faith</span>
+                        <h1 className="name-title tablet:text-[50px] mobile:text-[34px] laptop:text-[56px] desktop:text-[56px] mt-2">
+                            Simeon W. Johnson
+                        </h1>
+                        <span className="name-description font-bold text-xl mt-1">The Patriarch</span>
+                        <small className="name-description font-normal text-lg">The Simeon W Johnson family heritage</small>
+                    </div>
+                </div>
+
+                <Divider />
+
+                {/* A Life of Elegance */}
+                <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col-reverse mobile:flex-col-reverse w-full gap-x-14 gap-y-8 items-center">
+                    <div className="w-full laptop:w-2/3 flex flex-col gap-y-5">
+                        <div>
+                            <span className="section-eyebrow">A Life of Elegance</span>
+                            <h2 className="section-heading">Faith, Family &amp; the Written Word</h2>
                         </div>
-
-                        <div className="flex gap-y-4 flex-col h-full p-2 z-20">
-                        <p className="tracking-widest text-md leading-loose indent-8 content text-justify">
+                        <p className="tracking-widest text-md leading-loose content text-justify drop-cap">
                             Simeon Johnson stands as a paragon of refinement, a man whose life is shaped by elegance, wisdom, and a deeply ingrained sense of responsibility.
                             As a patriarch, his influence reaches far beyond the boundaries of his immediate family. He is a guiding force, a man whose very presence evokes a
                             sense of dignity and grace. As a devoted father and a distinguished writer whose life and work are deeply intertwined with his commitment to faith and family. As a father,
@@ -55,80 +69,120 @@ export default function AuthorPages() {
                             Johnson&#39;s website highlights his dual passion for nurturing his family and sharing his spiritual insights with the world. His dedication to both roles
                             reveals a deep commitment to living out his beliefs and values, making his contributions both personally meaningful and universally relevant.
                         </p>
+                    </div>
+                    <div className="w-full laptop:w-1/3 flex justify-center">
+                        <div className="portrait-frame">
+                            <Image
+                                src="/images/family/father.jpg"
+                                alt="Simeon W. Johnson"
+                                width={380}
+                                height={437}
+                            />
                         </div>
                     </div>
                 </div>
 
-                <div className="flex  w-full h-full gap-x-5 laptop:mt-6 tablet:mt-12 mobile:mt-12">
-                    <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-justify laptop:mt-0 tablet:mt-10 h-full">
-                        <p>
-                        Born in Jamaica as the youngest of thirteen children, Simeon Johnson overcame significant hardships from an early age. Tragically, he witnessed his mother’s
-                        death during his childhood, an event that cast a long shadow over his formative years. As a teenager,
-                        he faced myriad struggles and even found himself teetering on the brink of suicide. It is remarkable, then,
-                        that in the midst of such adversity, he would later return to testify to the world about the blessings he has received, proclaiming the transformative power of faith and the testimony of the Cross.
+                <Divider />
 
-                        Despite the challenges of his early life, Simeon’s upbringing was steeped in the values of tradition and intellect.
-                        His childhood home, filled with books and lively intellectual conversations, nurtured his burgeoning love for literature.
-                        He spent countless hours lost in the pages of classic novels, poetry, and essays, fostering a passion for the written word
-                        that would ultimately define his identity as a writer.
+                {/* Early Life */}
+                <div className="w-full flex flex-col items-center text-center mb-8">
+                    <span className="section-eyebrow">Early Life</span>
+                    <h2 className="section-heading">From Hardship to Testimony</h2>
+                </div>
+                <div className="flex w-full gap-x-5">
+                    <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-justify gap-y-5">
+                        <p>
+                            Born in Jamaica as the youngest of thirteen children, Simeon Johnson overcame significant hardships from an early age. Tragically, he witnessed his mother’s
+                            death during his childhood, an event that cast a long shadow over his formative years. As a teenager,
+                            he faced myriad struggles and even found himself teetering on the brink of suicide. It is remarkable, then,
+                            that in the midst of such adversity, he would later return to testify to the world about the blessings he has received, proclaiming the transformative power of faith and the testimony of the Cross.
                         </p>
-
                         <p>
-                        Simeon’s upbringing also emphasized the importance of manners, decorum, and the necessity of carrying oneself with dignity.
-                        Although his parents were strict, they were also loving, instilling in him principles of humility and respect for others. These lessons
-                        remained with him throughout his life, shaping the man he would become. Whether attending formal dinners with extended family or engaging in simple
-                        conversations at the kitchen table, Simeon learned early on the value of connecting with others in a thoughtful and considerate manner.
-                        This elegance in interaction would later influence both his family life and his professional endeavors as a writer, allowing him to express the profound insights he gained from his life experiences through his literary work.
+                            Despite the challenges of his early life, Simeon’s upbringing was steeped in the values of tradition and intellect.
+                            His childhood home, filled with books and lively intellectual conversations, nurtured his burgeoning love for literature.
+                            He spent countless hours lost in the pages of classic novels, poetry, and essays, fostering a passion for the written word
+                            that would ultimately define his identity as a writer.
                         </p>
-
                         <p>
-                        Through his journey, not only navigated the storms of his early years but also emerged as a beacon of hope and resilience, dedicated to sharing his story
-                        and inspiring others along the way.
+                            Simeon’s upbringing also emphasized the importance of manners, decorum, and the necessity of carrying oneself with dignity.
+                            Although his parents were strict, they were also loving, instilling in him principles of humility and respect for others. These lessons
+                            remained with him throughout his life, shaping the man he would become. Whether attending formal dinners with extended family or engaging in simple
+                            conversations at the kitchen table, Simeon learned early on the value of connecting with others in a thoughtful and considerate manner.
+                            This elegance in interaction would later influence both his family life and his professional endeavors as a writer, allowing him to express the profound insights he gained from his life experiences through his literary work.
+                        </p>
+                        <p>
+                            Through his journey, not only navigated the storms of his early years but also emerged as a beacon of hope and resilience, dedicated to sharing his story
+                            and inspiring others along the way.
                         </p>
                     </div>
                 </div>
 
+                <Divider />
+
+                {/* Gallery */}
                 <div className="w-full">
-                    <div className="w-full h-[400px] relative flex flex-row gap-2">
+                    <div className="w-full h-[400px] relative flex flex-row gap-4">
                         {images.map((src, idx) => (
-                            <div key={idx} className="relative w-full h-full transform transition-transform duration-300 ease-in-out hover:scale-105 hover:z-10 rounded-xl overflow-hidden">
+                            <div key={idx} className="gallery-frame relative w-full h-full transform transition-transform duration-300 ease-in-out hover:scale-105 hover:z-10">
                                 <Image
-                                src={src}
-                                alt={`slide-${idx}`}
-                                fill
-                                className="object-cover"
+                                    src={src}
+                                    alt={`slide-${idx}`}
+                                    fill
+                                    className="object-cover"
                                 />
                             </div>
                         ))}
                     </div>
                 </div>
 
+                <Divider />
 
-                <div className="flex flex-col w-full tablet:px-14 mobile:px-1 mb-16 mt-10">
-                    <span className="qoutes laptop:text-[58px] tablet:text-[48px] mobile:text-[40px] text-left">
-                        &quot;He that openeth and no man and shutteth; and shutteth, and no man openeth&quot;
-                        <span className="qoutes laptop:text-[40px] tablet:text-[35px] mobile:text-[30px]"> - Revelation 3: 7-8</span>
+                {/* Quote */}
+                <div className="quote-block mb-4">
+                    <span className="quote-glyph" aria-hidden="true">&#8220;</span>
+                    <span className="qoutes laptop:text-[52px] tablet:text-[42px] mobile:text-[32px] leading-tight block">
+                        He that openeth and no man and shutteth; and shutteth, and no man openeth
+                    </span>
+                    <span className="qoutes laptop:text-[26px] tablet:text-[24px] mobile:text-[20px] block mt-4">
+                        — Revelation 3: 7-8
                     </span>
                 </div>
 
-                <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col mobile:flex-col w-full h-full gap-x-5 laptop:mt-6 tablet:mt-12 mobile:mt-12">
-                    <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-justify laptop:mt-0 tablet:mt-10 h-full">
-                        <p>
-                        Happily married  to <b>Dorothy Johnson</b> a quintessential embodiment of a loving mother and devoted wife,
-                        whose life revolves around nurturing her family and supporting her husband, Simeon Johnson, a distinguished writer whose literary pursuits often demand both
-                        creativity and solitude, and in this delicate balance, Dorothy finds her purpose, seamlessly intertwining her roles with grace and dedication, as she creates a
-                        home that is not merely a physical space but a sanctuary brimming with warmth, love, and encouragement, where laughter echoes off the walls and the scent of
-                        home-cooked meals wafts through the air, filling every corner with a sense of comfort and belonging that invites everyone to share in the daily joys and struggles
-                        of life, and as a mother to their two daughters, she exemplifies unconditional love, always ensuring that her girls feel cherished and supported in their
-                        individual dreams and aspirations, taking the time to listen to their hopes and fears, engaging in heartfelt conversations that strengthen their bond, while
-                        also teaching them the values of kindness, resilience, and the importance of pursuing their passions with tenacity, as she guides them through the complexities
-                        of growing up, helping them navigate the challenges they face with wisdom and patience,
-                        understanding that her role as a mother extends beyond just providing physical care;
+                <Divider />
+
+                {/* Family */}
+                <div className="w-full flex flex-col items-center text-center mb-8">
+                    <span className="section-eyebrow">Beside Him</span>
+                    <h2 className="section-heading">Dorothy Johnson — Wife &amp; Mother</h2>
+                </div>
+                <div className="flex desktop:flex-row laptop:flex-row tablet:flex-col mobile:flex-col w-full gap-x-14 gap-y-8 items-center">
+                    <div className="w-full laptop:w-1/3 flex justify-center order-1 laptop:order-none">
+                        <div className="portrait-frame">
+                            <Image
+                                src="/images/family/wife_and_simeon.jpg"
+                                alt="Simeon and Dorothy Johnson"
+                                width={380}
+                                height={437}
+                            />
+                        </div>
+                    </div>
+                    <div className="w-full laptop:w-2/3 flex flex-col gap-y-5">
+                        <p className="tracking-widest text-md leading-loose indent-8 content text-justify">
+                            Happily married  to <b>Dorothy Johnson</b> a quintessential embodiment of a loving mother and devoted wife,
+                            whose life revolves around nurturing her family and supporting her husband, Simeon Johnson, a distinguished writer whose literary pursuits often demand both
+                            creativity and solitude, and in this delicate balance, Dorothy finds her purpose, seamlessly intertwining her roles with grace and dedication, as she creates a
+                            home that is not merely a physical space but a sanctuary brimming with warmth, love, and encouragement, where laughter echoes off the walls and the scent of
+                            home-cooked meals wafts through the air, filling every corner with a sense of comfort and belonging that invites everyone to share in the daily joys and struggles
+                            of life, and as a mother to their two daughters, she exemplifies unconditional love, always ensuring that her girls feel cherished and supported in their
+                            individual dreams and aspirations, taking the time to listen to their hopes and fears, engaging in heartfelt conversations that strengthen their bond, while
+                            also teaching them the values of kindness, resilience, and the importance of pursuing their passions with tenacity, as she guides them through the complexities
+                            of growing up, helping them navigate the challenges they face with wisdom and patience,
+                            understanding that her role as a mother extends beyond just providing physical care;
                         </p>
                     </div>
                 </div>
 
-                <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-justify mt-10 h-auto mb-12">
+                <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-justify mt-8 h-auto mb-12">
                     <p>
                         It involves instilling confidence in her daughters, empowering them to believe in themselves and their abilities, and while
                         Dorothy diligently attends to the daily routines of family life—organizing schedules, overseeing homework, and preparing meals—she also finds
@@ -154,30 +208,40 @@ export default function AuthorPages() {
                     </p>
                 </div>
 
-                <div className="flex flex-col w-full tracking-widest text-md leading-loose indent-8 content text-center mt-3 h-auto mb-12">
-                    <div className="flex mobile:flex-col tablet:flex-col laptop:flex-row justify-center items-center w-full tmt-3 h-auto ">
+                <Divider />
 
-                        <div>
-                            <h3 className='book-title font-bold mobile:!text-[30px] tablet:!text-[50px] laptop:!text-[50px]'>&quot;My Mission and Vision&quot;</h3>
-                            <p className='qoutes indent-10 text-[25px] font-bold'>
-                                To promulgate the Good News Story around the World, changing lives in preparation for the Kingdom of God. Amen!
-                            </p>
-                        </div>
+                {/* Mission */}
+                <div className="flex flex-col w-full items-center mb-4">
+                    <div className="mission-panel text-center">
+                        <h3 className='book-title font-bold mobile:!text-[28px] tablet:!text-[42px] laptop:!text-[42px]'>&quot;My Mission and Vision&quot;</h3>
+                        <p className='qoutes indent-10 text-[22px] font-bold mt-2'>
+                            To promulgate the Good News Story around the World, changing lives in preparation for the Kingdom of God. Amen!
+                        </p>
                     </div>
-
                 </div>
 
-                <div className="mb-10 flex flex-col w-full justify-center items-center mt-10">
-                    <iframe frameborder="0" allowfullscreen=""
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" title="A Myopic Life Resonated From The Brink of The Abyss"
-                        className="w-full h-[700px]"
-                        src="https://www.youtube-nocookie.com/embed/iJePe-bTqzQ?controls=1&amp;rel=0&amp;playsinline=0&amp;modestbranding=0&amp;autoplay=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fsimeonwjohnsonbookministry.us&amp;widgetid=1" id="widget2">
-                    </iframe>
+                <Divider />
+
+                {/* Video */}
+                <div className="mb-10 flex flex-col w-full items-center">
+                    <div className="flex flex-col items-center text-center mb-6">
+                        <span className="section-eyebrow">In His Own Words</span>
+                        <h2 className="section-heading">A Myopic Life Resonated From The Brink of The Abyss</h2>
+                    </div>
+                    <div className="video-frame w-full">
+                        <iframe
+                            allowFullScreen
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            title="A Myopic Life Resonated From The Brink of The Abyss"
+                            className="w-full h-[700px]"
+                            src="https://www.youtube-nocookie.com/embed/iJePe-bTqzQ?controls=1&amp;rel=0&amp;playsinline=0&amp;modestbranding=0&amp;autoplay=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fsimeonwjohnsonbookministry.us&amp;widgetid=1"
+                            id="widget2"
+                        />
+                    </div>
                 </div>
             </section>
             <Footer />
         </div>
     );
 }
-
