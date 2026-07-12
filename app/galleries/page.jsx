@@ -1,8 +1,10 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Navigator from "../components/navigator";
 import Footer from "../components/footer";
 import "../globals.scss";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,8 +14,28 @@ import "swiper/css/navigation";
 
 import Image from "next/image";
 
+const Divider = () => (
+    <div className="section-divider" aria-hidden="true">
+        <span className="section-divider-mark"></span>
+    </div>
+);
+
 export default function Galleries() {
-    const swiperRef = useRef(null);
+    const familySwiperRef = useRef(null);
+    const travelSwiperRef = useRef(null);
+    const [lightboxSrc, setLightboxSrc] = useState(null);
+
+    useEffect(() => {
+        const onKeyDown = (e) => {
+            if (e.key === "Escape") setLightboxSrc(null);
+        };
+        window.addEventListener("keydown", onKeyDown);
+        document.body.style.overflow = lightboxSrc ? "hidden" : "";
+        return () => {
+            window.removeEventListener("keydown", onKeyDown);
+            document.body.style.overflow = "";
+        };
+    }, [lightboxSrc]);
 
     const familyImages = [
     "/images/family/father.jpg",
@@ -53,105 +75,169 @@ export default function Galleries() {
     ]
 
     return (
-        <div className="flex flex-col min-h-screen !bg-yellow-100">
-        <Navigator />
-        <main className="flex flex-col flex-auto justify-center items-center px-5 py-20">
-            <div className="w-full flex flex-col items-center gap-6">
-                <div className="w-full text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-wide text-gray-800">
-                    Family Gallery
+        <div className="w-full flex flex-col items-center justify-center min-h-screen h-auto" style={{ backgroundColor: "var(--cream)" }}>
+            <Navigator />
+            <section className="flex flex-col w-full h-full mt-32 desktop:px-24 laptop:px-16 tablet:px-10 mobile:px-5 relative mb-10 max-w-screen-xl">
+
+                {/* Intro */}
+                <div className="w-full flex flex-col items-center text-center pb-4">
+                    <span className="section-eyebrow">The Gallery</span>
+                    <h1 className="section-heading laptop:!text-[46px] desktop:!text-[46px] mobile:!text-[30px]">
+                        Moments Worth Keeping
                     </h1>
-                    <p className="mt-2 text-gray-500 text-lg">
-                    A collection of memories with my loved ones
+                    <p className="qoutes indent-10 text-[22px] font-bold max-w-4xl mt-4">
+                        A gathering of memories — the faces I cherish and the places that shaped my journey.
                     </p>
                 </div>
 
-                {/* 🌟 Linear Gallery */}
+                <Divider />
+
+                {/* Family Gallery */}
+                <div className="w-full flex flex-col items-center gap-2">
+                    <span className="section-eyebrow">Beloved Faces</span>
+                    <h2 className="section-heading text-center">Family Gallery</h2>
+                    <p className="name-description text-center mt-1 max-w-2xl !text-[17px]">
+                        A collection of memories with my loved ones
+                    </p>
+                </div>
+
                 <Swiper
                     grabCursor
                     loop
-                    slidesPerView={3} // shows 3 slides at once
-                    spaceBetween={90} // gap between slides
-                    speed={5000} // 👈 how fast it scrolls (higher = slower)
+                    slidesPerView={1}
+                    breakpoints={{
+                        640: { slidesPerView: 2, spaceBetween: 40 },
+                        1024: { slidesPerView: 3, spaceBetween: 60 },
+                    }}
+                    spaceBetween={24}
+                    speed={5000}
                     autoplay={{
-                        delay: 0, // 👈 no delay
+                        delay: 0,
                         disableOnInteraction: false,
                     }}
                     freeMode={true}
                     navigation={false}
                     modules={[Navigation, Autoplay]}
-                    onSwiper={(swiper) => (swiperRef.current = swiper)}
-                    className="w-full h-[500px]"
+                    onSwiper={(swiper) => (familySwiperRef.current = swiper)}
+                    className="w-full h-[420px] mt-10"
                 >
                     {familyImages.map((src, idx) => (
                     <SwiperSlide
                         key={idx}
-                        className="!h-[4600px] flex items-center justify-center"
-                        onMouseEnter={() => swiperRef.current?.autoplay.stop()}
-                        onMouseLeave={() => swiperRef.current?.autoplay.start()}
+                        className="flex items-center justify-center"
+                        onMouseEnter={() => familySwiperRef.current?.autoplay.stop()}
+                        onMouseLeave={() => familySwiperRef.current?.autoplay.start()}
                     >
-                        <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-                        <Image
-                            src={src}
-                            alt={`slide-${idx}`}
-                            fill
-                            className="object-cover"
-                        />
+                        <div
+                            className="gallery-frame relative w-full h-[380px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.03]"
+                            onClick={() => setLightboxSrc(src)}
+                        >
+                            <Image
+                                src={src}
+                                alt={`Family memory ${idx + 1}`}
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </SwiperSlide>
                     ))}
                 </Swiper>
-            </div>
 
-            <div className="w-full flex flex-col items-center gap-6 mt-10">
-                <div className="w-full text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-wide text-gray-800">
-                    Travel Gallery
-                    </h1>
-                    <p className="mt-2 text-gray-500 text-lg">
-                        A  collection of unforgettable journeys and adventures
+                <Divider />
+
+                {/* Travel Gallery */}
+                <div className="w-full flex flex-col items-center gap-2">
+                    <span className="section-eyebrow">Journeys Abroad</span>
+                    <h2 className="section-heading text-center">Travel Gallery</h2>
+                    <p className="name-description text-center mt-1 max-w-2xl !text-[17px]">
+                        A collection of unforgettable journeys and adventures
                     </p>
                 </div>
 
-                {/* 🌟 Linear Gallery */}
                 <Swiper
                     grabCursor
                     loop
-                    slidesPerView={3} // shows 3 slides at once
-                    spaceBetween={90} // gap between slides
-                    speed={5000} // 👈 how fast it scrolls (higher = slower)
+                    slidesPerView={1}
+                    breakpoints={{
+                        640: { slidesPerView: 2, spaceBetween: 40 },
+                        1024: { slidesPerView: 3, spaceBetween: 60 },
+                    }}
+                    spaceBetween={24}
+                    speed={5000}
                     autoplay={{
-                        delay: 0, // 👈 no delay
+                        delay: 0,
                         disableOnInteraction: false,
                         reverseDirection: true,
                     }}
                     freeMode={true}
                     navigation={false}
                     modules={[Navigation, Autoplay]}
-                    onSwiper={(swiper) => (swiperRef.current = swiper)}
-                    className="w-full h-[600px]"
+                    onSwiper={(swiper) => (travelSwiperRef.current = swiper)}
+                    className="w-full h-[420px] mt-10"
                 >
                     {travelImages.map((src, idx) => (
                     <SwiperSlide
                         key={idx}
-                        className="!h-[400px] flex items-center justify-center"
-                        onMouseEnter={() => swiperRef.current?.autoplay.stop()}
-                        onMouseLeave={() => swiperRef.current?.autoplay.start()}
+                        className="flex items-center justify-center"
+                        onMouseEnter={() => travelSwiperRef.current?.autoplay.stop()}
+                        onMouseLeave={() => travelSwiperRef.current?.autoplay.start()}
                     >
-                        <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-                        <Image
-                            src={src}
-                            alt={`slide-${idx}`}
-                            fill
-                            className="object-cover"
-                        />
+                        <div
+                            className="gallery-frame relative w-full h-[380px] cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.03]"
+                            onClick={() => setLightboxSrc(src)}
+                        >
+                            <Image
+                                src={src}
+                                alt={`Travel memory ${idx + 1}`}
+                                fill
+                                className="object-cover"
+                            />
                         </div>
                     </SwiperSlide>
                     ))}
                 </Swiper>
-            </div>
-        </main>
-        <Footer />
+            </section>
+
+            {/* Lightbox */}
+            <AnimatePresence>
+                {lightboxSrc && (
+                    <motion.div
+                        className="lightbox-backdrop"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        onClick={() => setLightboxSrc(null)}
+                    >
+                        <motion.div
+                            className="lightbox-frame"
+                            initial={{ opacity: 0, scale: 0.94 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.94 }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                onClick={() => setLightboxSrc(null)}
+                                className="lightbox-close"
+                                aria-label="Close"
+                            >
+                                <X size={18} />
+                            </button>
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src={lightboxSrc}
+                                    alt="Enlarged view"
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            <Footer />
         </div>
     );
 }
