@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navigator from "../components/navigator";
 import Footer from "../components/footer";
 import "../globals.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ArrowUpRight, BookOpen } from "lucide-react";
 
 const books = [
     {
@@ -46,92 +46,160 @@ const books = [
     },
 ];
 
+const Divider = () => (
+    <div className="section-divider" aria-hidden="true">
+        <span className="section-divider-mark"></span>
+    </div>
+);
+
 export default function BooksPage() {
-    const [hoveredBook, setHoveredBook] = useState(null);
+    const [activeBook, setActiveBook] = useState(null);
+
+    useEffect(() => {
+        const onKeyDown = (e) => {
+            if (e.key === "Escape") setActiveBook(null);
+        };
+        window.addEventListener("keydown", onKeyDown);
+        document.body.style.overflow = activeBook !== null ? "hidden" : "";
+        return () => {
+            window.removeEventListener("keydown", onKeyDown);
+            document.body.style.overflow = "";
+        };
+    }, [activeBook]);
 
     return (
-        <div className="bg-yellow-100 w-full flex flex-col items-center justify-center min-h-screen h-auto">
+        <div className="w-full flex flex-col items-center justify-center min-h-screen h-auto" style={{ backgroundColor: "var(--cream)" }}>
             <Navigator />
-            <section className="flex flex-col w-full h-full mt-44 desktop:px-40 laptop:px-10 tablet:px-10 mobile:px-0 relative mb-10">
-            <div className='mb-3 w-full h-auto flex mobile:flex-col tablet:flex-row laptop:flex-row desktop:flex-row mobile:gap-x-0  tablet:gap-x-5 laptop:gap-x-4 desktop:gap-x-0'>
-                <div className='gap-y-6 flex flex-col items-center mobile:justify-center tablet:justify-start laptop:justify-start px-4 mobile:py-4 tablet:py-10 laptop:py-10 w-full'>
-                <h3 className='book-title font-bold laptop:!text-[50px] desktop:!text-[50px]'>&quot;The significance of words&quot;</h3>
-                <p className='qoutes indent-10 text-[25px] font-bold'>
-                    In my books, you will find a cornucopia of significance and insightful inspirations through the written words!
-                    Words are the tools of thought by which both men and women do most of their thinking and communicate through language.
-                    It clarifies your speech and writing: enhances your conversation with style: It Broadens horizons and increases overall knowledge.
-                    An exact and essential vocabulary is a necessary concomitant to success! It culls the mind with distention to choose the Word that precisely expresses
-                    the thought, the knowledge, and the ability to use them that affirmed these books. Spiritual and natural perspicacity is changing lives everywhere. To God be the Glory!
-                </p>
+            <section className="flex flex-col w-full h-full mt-32 desktop:px-24 laptop:px-16 tablet:px-10 mobile:px-5 relative mb-10 max-w-screen-xl">
+
+                {/* Intro */}
+                <div className="w-full flex flex-col items-center text-center pb-4">
+                    <span className="section-eyebrow">The Book Ministry</span>
+                    <h1 className="section-heading laptop:!text-[46px] desktop:!text-[46px] mobile:!text-[30px]">
+                        &quot;The Significance of Words&quot;
+                    </h1>
+                    <p className="qoutes indent-10 text-[22px] font-bold max-w-4xl mt-4">
+                        In my books, you will find a cornucopia of significance and insightful inspirations through the written words!
+                        Words are the tools of thought by which both men and women do most of their thinking and communicate through language.
+                        It clarifies your speech and writing: enhances your conversation with style: It Broadens horizons and increases overall knowledge.
+                        An exact and essential vocabulary is a necessary concomitant to success! It culls the mind with distention to choose the Word that precisely expresses
+                        the thought, the knowledge, and the ability to use them that affirmed these books. Spiritual and natural perspicacity is changing lives everywhere. To God be the Glory!
+                    </p>
                 </div>
-            </div>
-                <div className="grid mobile:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 desktop:grid-cols-2 gap-12">
-                {books.map((book, idx) => (
-                    <div
-                    key={idx}
-                    className="relative flex flex-col items-center justify-center"
-                    >
-                    <Link
-                    href={book.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cursor-pointer"
-                    >
-                        <Image
-                            onMouseEnter={() => setHoveredBook(idx)}
-                            // onMouseLeave={() => setHoveredBook(null)}
-                            src={book.img}
-                            alt={book.title}
-                            width={300}
-                            height={400}
-                            className="transition-transform duration-300 hover:scale-105"
-                        />
-                    </Link>
-                    <h3 className="mt-3 font-bold text-xl text-center">{book.title}</h3>
 
-                    <Link
-                        href={book.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cursor-pointer bg-black text-gold p-4 rounded-xl mt-5 text-xl"
+                <Divider />
+
+                {/* Shelf */}
+                <div className="grid mobile:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 desktop:grid-cols-4 gap-x-10 gap-y-16">
+                    {books.map((book, idx) => (
+                        <motion.div
+                            key={idx}
+                            className="book-card"
+                            initial={{ opacity: 0, y: 24 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: idx * 0.08 }}
                         >
-                        Order Now
-                    </Link>
-                    </div>
-                ))}
-            </div>
+                            <motion.div
+                                className="book-cover-frame"
+                                onClick={() => setActiveBook(idx)}
+                                whileHover={{ y: -10, rotate: idx % 2 === 0 ? -1.5 : 1.5 }}
+                                whileTap={{ scale: 0.97 }}
+                                transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                            >
+                                <Image
+                                    src={book.img}
+                                    alt={book.title}
+                                    width={300}
+                                    height={400}
+                                />
+                            </motion.div>
 
-            {/* Side Panel */}
+                            <h3 className="book-index-title mt-5 mb-4 min-h-[54px]">{book.title}</h3>
+
+                            <div className="book-btn-row">
+                                <button
+                                    onClick={() => setActiveBook(idx)}
+                                    className="book-btn flex items-center gap-1.5"
+                                >
+                                    <BookOpen size={14} /> Read More
+                                </button>
+                                <Link
+                                    href={book.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="book-btn book-btn-solid flex items-center gap-1.5"
+                                >
+                                    Order Now <ArrowUpRight size={14} />
+                                </Link>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
+
+            {/* Reading panel */}
             <AnimatePresence>
-                {hoveredBook !== null && (
-                    <motion.div
-                    initial={{ x: "100%" }}
-                    animate={{ x: 0 }}
-                    exit={{ x: "100%" }}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="fixed top-0 right-0 h-full w-[400px] bg-white shadow-2xl z-50 p-6 overflow-y-auto gap-3"
-                    >
+                {activeBook !== null && (
+                    <React.Fragment>
+                        <motion.div
+                            className="book-panel-backdrop"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            onClick={() => setActiveBook(null)}
+                        />
+                        <motion.div
+                            initial={{ x: "100%" }}
+                            animate={{ x: 0 }}
+                            exit={{ x: "100%" }}
+                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                            className="book-panel flex flex-col"
+                        >
+                            <div className="flex justify-between items-start p-6 pb-4">
+                                <span className="section-eyebrow">From the Book Ministry</span>
+                                <button
+                                    onClick={() => setActiveBook(null)}
+                                    className="book-panel-close"
+                                    aria-label="Close"
+                                >
+                                    <X size={18} />
+                                </button>
+                            </div>
 
-                    {/* Close button */}
-                    <button
-                        onClick={() => setHoveredBook(null)}
-                        className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
-                    >
-                        <X size={24} />
-                    </button>
-                    <h2 className="text-2xl font-bold mb-4">{books[hoveredBook].title}</h2>
-                    <p className="text-gray-700 leading-relaxed">
-                        {books[hoveredBook].desc_1}
-                    </p>
-                    <p className="text-gray-700 leading-relaxed mt-5">
-                        {books[hoveredBook].desc_2}
-                    </p>
-                    </motion.div>
+                            <div className="px-6 flex flex-col items-center text-center">
+                                <div className="portrait-frame" style={{ maxWidth: "220px" }}>
+                                    <Image
+                                        src={books[activeBook].img}
+                                        alt={books[activeBook].title}
+                                        width={220}
+                                        height={293}
+                                    />
+                                </div>
+                                <h2 className="book-panel-title mt-8">{books[activeBook].title}</h2>
+                            </div>
+
+                            <div className="book-panel-body px-6 mt-6 flex flex-col gap-4">
+                                <p>{books[activeBook].desc_1}</p>
+                                <p>{books[activeBook].desc_2}</p>
+                            </div>
+
+                            <div className="p-6 mt-4">
+                                <Link
+                                    href={books[activeBook].link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="book-btn book-btn-solid w-full flex items-center justify-center gap-1.5"
+                                >
+                                    Order This Book <ArrowUpRight size={14} />
+                                </Link>
+                            </div>
+                        </motion.div>
+                    </React.Fragment>
                 )}
             </AnimatePresence>
-        </section>
 
-        <Footer />
-    </div>
+            <Footer />
+        </div>
   );
 }
