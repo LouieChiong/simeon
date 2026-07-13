@@ -102,11 +102,36 @@ export default function Auction() {
                                         src={current.img}
                                         alt={`Lot ${lotNumber}`}
                                         fill
-                                        className="object-cover"
+                                        className="w-52 h-52"
                                         priority
                                     />
                                 </motion.div>
                             </AnimatePresence>
+                        </div>
+                    </div>
+
+                    <div className="auction-info-panel">
+                        <span className="section-eyebrow">Lot No. {lotNumber}</span>
+                        <h2 className="auction-lot-title">From The Personal Collection</h2>
+                        <p className="auction-lot-desc">{current.caption}</p>
+                        <p className="auction-lot-desc">
+                            Interested collectors are welcome to inquire directly for further details, provenance,
+                            and bidding information on this piece.
+                        </p>
+
+                        <div className="auction-cta-row">
+                            {/* <a
+                                href={inquireHref}
+                                className="book-btn book-btn-solid flex items-center gap-1.5"
+                            >
+                                <Mail size={14} /> Inquire About This Lot
+                            </a> */}
+                            <button
+                                onClick={() => setLightboxOpen(true)}
+                                className="book-btn flex items-center gap-1.5"
+                            >
+                                View Full Image
+                            </button>
                         </div>
 
                         <div className="auction-nav-row">
@@ -144,31 +169,6 @@ export default function Auction() {
                                     />
                                 </div>
                             ))}
-                        </div>
-                    </div>
-
-                    <div className="auction-info-panel">
-                        <span className="section-eyebrow">Lot No. {lotNumber}</span>
-                        <h2 className="auction-lot-title">From The Personal Collection</h2>
-                        <p className="auction-lot-desc">{current.caption}</p>
-                        <p className="auction-lot-desc">
-                            Interested collectors are welcome to inquire directly for further details, provenance,
-                            and bidding information on this piece.
-                        </p>
-
-                        <div className="auction-cta-row">
-                            {/* <a
-                                href={inquireHref}
-                                className="book-btn book-btn-solid flex items-center gap-1.5"
-                            >
-                                <Mail size={14} /> Inquire About This Lot
-                            </a> */}
-                            <button
-                                onClick={() => setLightboxOpen(true)}
-                                className="book-btn flex items-center gap-1.5"
-                            >
-                                View Full Image
-                            </button>
                         </div>
                     </div>
                 </div>

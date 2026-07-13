@@ -1,50 +1,56 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Navigator from "../components/navigator";
 import Footer from "../components/footer";
 import "../globals.scss";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
 
-// ✅ Import arrow icons
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
-function useIsDesktop(breakpoint = 1024) {
-    const [isDesktop, setIsDesktop] = useState(false);
+const Divider = () => (
+    <div className="section-divider" aria-hidden="true">
+        <span className="section-divider-mark"></span>
+    </div>
+);
 
-    useEffect(() => {
-        const update = () => setIsDesktop(window.innerWidth >= breakpoint);
-        update();
-        window.addEventListener("resize", update);
-        return () => window.removeEventListener("resize", update);
-    }, [breakpoint]);
-
-    return isDesktop;
-}
+const images = [
+    "/images/auctions/auction_12.png",
+    "/images/content/maya.png",
+    "/images/content/tigerwoods.png",
+    "/images/content/image_1.png",
+    "/images/content/image_2.jpg",
+    "/images/content/image_3.jpg",
+    "/images/content/image_4.jpg",
+    "/images/content/image_5.jpg",
+    "/images/content/image_6.png",
+    "/images/content/image_7.png",
+    "/images/content/image_8.jpeg",
+    "/images/content/image_9.jpeg",
+];
 
 export default function ContentPage() {
-    const isDesktop = useIsDesktop();
     const swiperRef = useRef(null);
-
     const [modalImage, setModalImage] = useState(null);
 
-    const images = [
-        "/images/auctions/auction_12.png",
-        '/images/content/maya.png',
-        '/images/content/tigerwoods.png',
-        '/images/content/image_1.png',
-        '/images/content/image_2.jpg',
-        '/images/content/image_3.jpg',
-        '/images/content/image_4.jpg',
-        '/images/content/image_5.jpg',
-        '/images/content/image_6.png',
-        '/images/content/image_7.png',
-    ];
+    useEffect(() => {
+        const onKeyDown = (e) => {
+            if (e.key === "Escape") setModalImage(null);
+        };
+        window.addEventListener("keydown", onKeyDown);
+        document.body.style.overflow = modalImage ? "hidden" : "";
+        return () => {
+            window.removeEventListener("keydown", onKeyDown);
+            document.body.style.overflow = "";
+        };
+    }, [modalImage]);
 
     const handleOpenModal = (src) => {
         setModalImage(src);
@@ -57,39 +63,64 @@ export default function ContentPage() {
     };
 
     return (
-        <div className="bg-yellow-100 w-full flex flex-col min-h-screen">
-        <Navigator />
-        <main className="flex-grow flex flex-col w-full my-12 desktop:px-40 laptop:px-10 tablet:px-10 mobile:px-0">
-            {/* Video + Images in one row */}
-            <div className="w-full mt-[120px] flex flex-col gap-10 items-start justify-center">
-            {/* Video */}
-            <div className="bg-black h-[500px] w-full rounded-2xl flex justify-center items-center overflow-hidden shadow-xl mb-10">
-                <iframe
-                frameBorder="0"
-                allowFullScreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                title="A Myopic Life Resonated From The Brink of The Abyss"
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/WeeWHM4zwSQ?si=7MivugWgEJt6zfYU&controls=1&rel=0&playsinline=0&modestbranding=0&autoplay=0"
-                id="widget2"
-                ></iframe>
-            </div>
+        <div className="w-full flex flex-col items-center justify-center min-h-screen h-auto" style={{ backgroundColor: "var(--cream)" }}>
+            <Navigator />
+            <section className="flex flex-col w-full h-full mt-32 desktop:px-24 laptop:px-16 tablet:px-10 mobile:px-5 relative mb-10 max-w-screen-xl">
 
-            <div className="bg-black h-[600px] w-full rounded-2xl flex justify-center items-center overflow-hidden shadow-xl mb-10">
-                <iframe
-                frameBorder="0"
-                allowFullScreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                title="A Myopic Life Resonated From The Brink of The Abyss"
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/iy68ZzC0ymM?si=7MivugWgEJt6zfYU&controls=1&rel=0&playsinline=0&modestbranding=0&autoplay=0"
-                id="widget2"
-                ></iframe>
-            </div>
+                {/* Intro */}
+                <div className="w-full flex flex-col items-center text-center pb-4">
+                    <span className="section-eyebrow">Media &amp; Insights</span>
+                    <h1 className="section-heading laptop:!text-[46px] desktop:!text-[46px] mobile:!text-[30px]">
+                        The Content Collection
+                    </h1>
+                    <p className="qoutes indent-10 text-[22px] font-bold max-w-4xl mt-4">
+                        Insightful videos, thought-provoking reflections, and behind-the-scenes glimpses into my creative world.
+                    </p>
+                </div>
 
-                {/* 🌟 3D Rotating Gallery */}
+                <Divider />
+
+                {/* Videos */}
+                <div className="w-full flex flex-col items-center text-center mb-10">
+                    <span className="section-eyebrow">In His Own Words</span>
+                    <h2 className="section-heading">Featured Videos</h2>
+                </div>
+
+                <div className="flex flex-col gap-10 w-full">
+                    <div className="video-frame w-full">
+                        <iframe
+                            allowFullScreen
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            title="A Myopic Life Resonated From The Brink of The Abyss"
+                            className="w-full h-[280px] tablet:h-[420px] laptop:h-[500px]"
+                            src="https://www.youtube.com/embed/WeeWHM4zwSQ?si=7MivugWgEJt6zfYU&controls=1&rel=0&playsinline=0&modestbranding=0&autoplay=0"
+                        />
+                    </div>
+
+                    <div className="video-frame w-full">
+                        <iframe
+                            allowFullScreen
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            title="Simeon W. Johnson — Featured Interview"
+                            className="w-full h-[280px] tablet:h-[420px] laptop:h-[560px]"
+                            src="https://www.youtube.com/embed/iy68ZzC0ymM?si=7MivugWgEJt6zfYU&controls=1&rel=0&playsinline=0&modestbranding=0&autoplay=0"
+                        />
+                    </div>
+                </div>
+
+                <Divider />
+
+                {/* Gallery */}
+                <div className="w-full flex flex-col items-center text-center mb-8">
+                    <span className="section-eyebrow">Behind The Scenes</span>
+                    <h2 className="section-heading">Captured Moments</h2>
+                    <p className="name-description text-center mt-1 max-w-2xl !text-[17px]">
+                        A glimpse into interviews, features, and creative milestones
+                    </p>
+                </div>
+
                 <Swiper
                     effect="coverflow"
                     grabCursor
@@ -97,79 +128,99 @@ export default function ContentPage() {
                     loop
                     slidesPerView="auto"
                     autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                }}
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    }}
                     coverflowEffect={{
-                    rotate: 45,
-                    stretch: 0,
-                    depth: 200,
-                    modifier: 1,
-                    slideShadows: true,
+                        rotate: 45,
+                        stretch: 0,
+                        depth: 200,
+                        modifier: 1,
+                        slideShadows: true,
                     }}
                     navigation={false}
                     modules={[EffectCoverflow, Navigation, Autoplay]}
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
-                    className="w-full h-[500px]"
+                    className="w-full h-[380px]"
                 >
                     {images.map((src, idx) => (
-                    <SwiperSlide
-                        key={idx}
-                        className="!w-[400px] !h-[400px] flex items-center justify-center"
-                    >
-                        <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
-                        <Image
-                            src={src}
-                            alt={`slide-${idx}`}
-                            fill
-                            className="h-auto w-auto cursor-pointer"
-                            onClick={() => handleOpenModal(src)}
-                        />
-                        </div>
-                    </SwiperSlide>
+                        <SwiperSlide
+                            key={idx}
+                            className="!w-[340px] !h-[340px] flex items-center justify-center"
+                        >
+                            <div
+                                className="gallery-frame relative w-full h-full cursor-pointer transition-transform duration-300 ease-in-out hover:scale-[1.03]"
+                                onClick={() => handleOpenModal(src)}
+                            >
+                                <Image
+                                    src={src}
+                                    alt={`Content moment ${idx + 1}`}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                        </SwiperSlide>
                     ))}
                 </Swiper>
 
-                {/* Arrows */}
-                <div className="flex gap-6 w-full items-center justify-center">
+                <div className="auction-nav-row mt-8">
                     <button
-                    onClick={() => swiperRef.current?.slidePrev()}
-                    className="p-3 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition"
+                        onClick={() => swiperRef.current?.slidePrev()}
+                        className="auction-nav-btn"
+                        aria-label="Previous"
                     >
-                    <ChevronLeft size={28} />
+                        <ChevronLeft size={20} />
                     </button>
                     <button
-                    onClick={() => swiperRef.current?.slideNext()}
-                    className="p-3 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition"
+                        onClick={() => swiperRef.current?.slideNext()}
+                        className="auction-nav-btn"
+                        aria-label="Next"
                     >
-                    <ChevronRight size={28} />
+                        <ChevronRight size={20} />
                     </button>
                 </div>
+            </section>
 
-            </div>
-        </main>
-        <Footer />
-
-        {/* Modal */}
-        {modalImage && (
-            <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-                <div className="relative max-w-5xl w-full h-[80%] flex justify-center items-center">
-                    <Image
-                        src={modalImage}
-                        alt="modal-preview"
-                        fill
-                        className="object-contain"
-                    />
-                    <button
+            {/* Lightbox */}
+            <AnimatePresence>
+                {modalImage && (
+                    <motion.div
+                        className="lightbox-backdrop"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
                         onClick={handleCloseModal}
-                        className="absolute top-4 right-4 p-2 rounded-full bg-white text-black hover:bg-gray-200"
                     >
-                        <X size={28} />
-                    </button>
-                </div>
-            </div>
-        )}
+                        <motion.div
+                            className="lightbox-frame"
+                            initial={{ opacity: 0, scale: 0.94 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.94 }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                onClick={handleCloseModal}
+                                className="lightbox-close"
+                                aria-label="Close"
+                            >
+                                <X size={18} />
+                            </button>
+                            <div className="relative w-full h-full">
+                                <Image
+                                    src={modalImage}
+                                    alt="Enlarged view"
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
+            <Footer />
         </div>
     );
 }
