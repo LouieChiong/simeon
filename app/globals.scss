@@ -7,6 +7,7 @@
 @import '../src/scss/main-page.scss';
 @import '../src/scss/navbar.scss';
 @import '../src/scss/books.scss';
+@import '../src/scss/auctions.scss';
 
 :root {
   --background: #ffffff;
@@ -16,6 +17,7 @@
   --content: #404040
   --text-primary: #ffffff;
   --text-gold: #FFD700;
+  --cream: #faf6ee;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -104,28 +106,9 @@ body {
   background-size: cover;
 }
 
-.hero-section {
-  background-image: url("/images/image_6.jpeg");
-  min-height: 100vh;
-  position: relative; /* required for overlay */
-}
-
-.hero-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.229); /* adjust opacity */
-  z-index: 1;
-}
-
-.hero-section > * {
-  position: relative;
-  z-index: 2; /* make sure content stays above overlay */
-}
-
 .cta-section {
   text-align: center;
-  background-image: url("https://images.unsplash.com/photo-1680026319202-fcb822e0ab91?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-image: url("/images/mission.png");
 }
 
 .cta-wrapper {
@@ -143,7 +126,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
   gap: 4vw;
-  background-color: white;
+  background-color: var(--cream);
   color: black;
 }
 .content-image {
@@ -153,15 +136,6 @@ body {
 
 .scroll-spacer {
   height: 100vh;
-}
-
-.hero-section {
-  position: sticky;
-  top: 0;
-}
-
-.hero-wrapper {
-  margin-bottom: -100vh;
 }
 
 .content-section {
