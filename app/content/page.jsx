@@ -26,14 +26,14 @@ const images = [
     "/images/content/maya.png",
     "/images/content/tigerwoods.png",
     "/images/content/image_1.png",
-    "/images/content/image_2.jpg",
+    "/images/content/image_2.png",
     "/images/content/image_3.jpg",
     "/images/content/image_4.jpg",
     "/images/content/image_5.jpg",
     "/images/content/image_6.png",
     "/images/content/image_7.png",
-    "/images/content/image_8.jpeg",
-    "/images/content/image_9.jpeg",
+    "/images/content/image_8.png",
+    "/images/content/image_9.png",
 ];
 
 export default function ContentPage() {
