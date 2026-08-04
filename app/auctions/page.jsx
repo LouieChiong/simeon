@@ -19,7 +19,7 @@ const lots = [
     { img: "/images/auctions/auction_3.jpg", caption: "A piece with personal significance, now offered to collectors." },
     { img: "/images/auctions/auction_4.jpg", caption: "Part of the personal memorabilia gathered throughout his career." },
     { img: "/images/auctions/auction_5.jpg", caption: "A rare item, held onto for years before being offered for auction." },
-    { img: "/images/auctions/auction_6.jpg", caption: "A cherished piece connected to Simeon's creative process." },
+    // { img: "/images/auctions/auction_6.jpg", caption: "A cherished piece connected to Simeon's creative process." },
     { img: "/images/auctions/auction_7.jpg", caption: "A unique find from Simeon's private collection." },
     { img: "/images/auctions/auction_8.jpg", caption: "A treasured keepsake from Simeon's personal collection." },
     { img: "/images/auctions/auction_9.jpg", caption: "One of a kind — carrying its own story from Simeon's journey." },
