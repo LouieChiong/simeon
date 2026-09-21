@@ -31,6 +31,9 @@ export const Navigator = () => {
                 <Link href="/galleries" className="nav-button">
                     Galleries
                 </Link>
+                <Link href="/timeline" className="nav-button">
+                    Timeline
+                </Link>
                 <Link href="/auctions" className="nav-button">
                     Auctions
                 </Link>
@@ -66,6 +69,9 @@ export const Navigator = () => {
                     </li>
                     <li>
                         <Link href="/galleries" className="mobile-nav-link">Galleries</Link>
+                    </li>
+                    <li>
+                        <Link href="/timeline" className="mobile-nav-link">Timeline</Link>
                     </li>
                     <li>
                         <Link href="/auctions" className="mobile-nav-link">Auctions</Link>
