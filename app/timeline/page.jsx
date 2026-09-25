@@ -81,7 +81,7 @@ const timeline = [
         facts: [
             ["Wife", "Dorothy Edward Johnson (born May 8, 1948)"],
             ["Married", "March 21, 1972"],
-            ["Children", "Cassandra and Cheryl"],
+            ["Children", "Cheryl and Cassandra"],
         ],
     },
     {
