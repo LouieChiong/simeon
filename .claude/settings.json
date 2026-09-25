@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"d:\\\\Simon website\\\\website\\\\simeon\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem -Path \"d:\\\\Simon website\\\\website\\\\simeon\\\\app\" -Recurse | Select-Object FullName | ForEach-Object {$_.FullName -replace [regex]::Escape\\(\"d:\\\\Simon website\\\\website\\\\simeon\\\\\"\\), \"\"})",
+      "PowerShell(Get-ChildItem -Path \"d:\\\\Simon website\\\\website\\\\simeon\\\\src\" -Recurse | Select-Object FullName | ForEach-Object {$_.FullName -replace [regex]::Escape\\(\"d:\\\\Simon website\\\\website\\\\simeon\\\\\"\\), \"\"})",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/framer-motion/package.json'\\).version\\)\")",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(pkill -f \"node.*next\")",
+      "Bash(rm -rf .next)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /tmp/mainapp.txt -w \"HTTP %{http_code}\\\\n\" \"http://localhost:3001/_next/static/chunks/main-app.js\")",
+      "Bash(curl -s -o /tmp/layoutcss.txt -w \"HTTP %{http_code}\\\\n\" \"http://localhost:3001/_next/static/css/app/layout.css\")",
+      "Bash(cat next.config.js)",
+      "Bash(cat next.config.mjs)",
+      "Bash(ls middleware.*)",
+      "Bash(find . -maxdepth 2 -iname \"middleware*\" -not -path \"*/node_modules/*\")",
+      "Bash(pkill -9 -f \"next\")",
+      "Bash(pkill -9 -f \"node\")",
+      "Bash(ls -la .next)",
+      "Bash(rm -f .next/trace)",
+      "Bash(ls .next)",
+      "PowerShell(Get-Process | Where-Object { $_.ProcessName -match \"node|next\" } | Select-Object Id, ProcessName, Path)",
+      "Bash(node panel-screenshot.js)"
+    ]
+  }
+}

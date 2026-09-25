@@ -66,6 +66,20 @@ const socialLinks = [
     icon: <TikTokIcon />,
   },
   {
+    name: "AARP",
+    desc: "Connect with AARP",
+    href: "https://www.aarp.org/",
+    icon: (
+      <Image
+        src="/images/AARP.png"
+        alt="AARP"
+        width={30}
+        height={24}
+        style={{ objectFit: "contain" }}
+      />
+    ),
+  },
+  {
     name: "X (TWITTER)",
     desc: "Thoughts & updates",
     href: "https://bit.ly/4nHeN27",
@@ -80,7 +94,7 @@ const socialLinks = [
   {
     name: "BARNES & NOBLE",
     desc: "Explore more",
-    href: "https://bit.ly/4ddf3Cn",
+    href: "https://www.barnesandnoble.com/search?attributes.contributorId=20487378&contributorName=Simeon%20W%20Johnson&orderBy=attributes.mfield_bnb__salesRank",
     icon: <BNIcon />,
   },
   {
