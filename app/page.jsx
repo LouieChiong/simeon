@@ -4,6 +4,7 @@ import Navigator from "./components/navigator";
 import Image from "next/image";
 import Link from "next/link";
 import SocialMediaConnect from "./components/SocialMediaConnect";
+import HeroVideo from "./components/HeroVideo";
 
 export default function Home() {
   return (
@@ -11,6 +12,8 @@ export default function Home() {
         <Navigator />
       {/* Hero Section */}
       <section className="hero-light">
+        <HeroVideo src="/images/video/1120.mp4" speed={0.75} />
+        <div className="hero-bg-overlay" aria-hidden="true" />
         <span className="hero-watermark" aria-hidden="true">JOHNSON</span>
         <div className="hero-content-grid">
           <div>
@@ -41,16 +44,6 @@ export default function Home() {
                 The Mission
               </Link>
             </div>
-          </div>
-          <div className="hero-photo-frame" data-aos="fade-up" data-aos-delay="150">
-            <Image
-              src="/images/image_6.jpeg"
-              alt="Simeon W. Johnson"
-              width={760}
-              height={480}
-              priority
-              className="w-full h-auto object-cover"
-            />
           </div>
         </div>
         <div className="hero-scroll-cue">Scroll</div>
